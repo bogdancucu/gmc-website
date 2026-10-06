@@ -1,0 +1,87 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+
+const faq = [
+  { q: 'Am 350 Bq/m³. E grav?', a: 'Este peste nivelul de referință (300 Bq/m³), deci legislația cere analizarea situației și măsuri de reducere. Riscul crește treptat cu concentrația și cu timpul petrecut în clădire; valorile moderat depășite se rezolvă de regulă cu etanșare și ventilare corectă. Planul îl stabilim după diagnostic.' },
+  { q: 'Cât durează o remediere?', a: 'Execuția: de la o zi (etanșări, reglarea ventilării) la câteva zile (sistem de depresurizare sub placă). Măsurarea de verificare durează cât o măsurare obișnuită, cu detectori pasivi.' },
+  { q: 'Garantați rezultatul?', a: 'Planul are o țintă clară – sub 300 Bq/m³ – iar măsurarea de verificare arată dacă am atins-o. Dacă nu, ajustăm soluția. Este și motivul pentru care executăm noi lucrarea, nu doar o recomandăm.' },
+  { q: 'Măsurarea a fost făcută de altcineva. Puteți face doar remedierea?', a: 'Da, dacă buletinul provine de la un laborator desemnat de CNCAN. Facem diagnosticul clădirii și pornim de la valorile din buletin.' },
+  { q: 'Ce se întâmplă după remediere?', a: 'Sistemele active (ventilatoare, depresurizare) se verifică periodic și se întrețin. Un studiu pe 10 locuințe din România, urmărite 53 de luni după remediere, a arătat o eficiență mediană de 80%, dar cu variații mari în funcție de metodă și de cât de consecvent au folosit oamenii sistemele. Eficiența tehnică trebuie dublată de obișnuință.' },
+];
+---
+<Base title="Remediere radon – diagnostic, plan, execuție, verificare" description="Reducerea concentrației de radon în clădiri existente: diagnostic, plan de remediere conform RTC 6-2022, execuție (etanșare, ventilare, depresurizarea solului) și măsurare de verificare. GMC Proiect Construct, membru ARaR." current="/remediere-radon/" image="/images/remediere.jpg">
+
+  <section class="page-hero" style="background-image:url('/images/remediere.jpg')">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › Remediere radon</div>
+      <h1>Remediere radon</h1>
+      <p class="lead">O concentrație ridicată nu este o sentință, ci o situație tehnică cu soluții cunoscute. Clădiri cu sute sau mii de Bq/m³ ajung la niveluri conforme. Suntem constructori: planul nu rămâne pe hârtie.</p>
+      <div class="cta-row" style="margin-top:24px">
+        <a class="btn primary" href="/contact/">Cere un plan de remediere</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>Traseul complet</h2>
+          <p class="intro">Metodologia CNCAN (Ordinul 153/2023) cere ca, la depășirea nivelului de referință, remedierea să fie prioritizată și realizată în termenele stabilite în funcție de nivelul de risc – de regulă 12 sau 18 luni.</p>
+        </div>
+      </div>
+      <div class="process reveal" style="grid-template-columns:repeat(3,1fr)">
+        <div><h3>Depistare</h3><p>Buletinul de măsurare de la un laborator desemnat de CNCAN arată dacă nivelul de referință este depășit. <a href="/masurare-radon/">Cum se măsoară</a></p></div>
+        <div><h3>Diagnostic</h3><p>Înțelegem de ce există problema: inspecția fundației și a subsolului, căile de pătrundere, ventilația și diferențele de presiune, măsurători suplimentare pe încăperi și, unde e cazul, în sol.</p></div>
+        <div><h3>Plan de remediere</h3><p>Soluția adaptată clădirii, după valorile măsurate, surse, costuri și condiții locale, cu etapele de lucru și ținta: sub 300 Bq/m³.</p></div>
+        <div><h3>Execuție</h3><p>Lucrarea este executată de echipa noastră de construcții, cu cât mai puțină intervenție în spațiul folosit.</p></div>
+        <div><h3>Verificare</h3><p>O nouă măsurare cu detectori pasivi confirmă noua valoare anuală și eficiența intervenției.</p></div>
+        <div><h3>Monitorizare</h3><p>Sistemele active se verifică periodic și se întrețin; măsurarea se repetă după renovări sau schimbări de ventilație.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>Metodele de reducere</h2>
+          <p class="intro">Reglementarea tehnică RTC 6-2022 (MDLPA) descrie metodele pentru clădirile existente. Nu există o rețetă universală: de obicei combinăm două sau trei.</p>
+        </div>
+      </div>
+      <div class="cols-3 reveal">
+        <div class="panel accent"><h3>Depresurizarea solului</h3><p>Cea mai eficientă: un sistem care extrage aerul încărcat cu radon de sub placă, înainte să intre în clădire. Poate reduce concentrația cu peste 80–90%. Soluția de bază la valori mari sau în clădiri greu de ventilat.</p></div>
+        <div class="panel"><h3>Etanșarea căilor de pătrundere</h3><p>Închiderea fisurilor din pardoseală, a rosturilor perete–pardoseală și a trecerilor de instalații. Reduce intrarea la sursă, dar rareori este suficientă singură la concentrații mari.</p></div>
+        <div class="panel"><h3>Ventilația</h3><p>Naturală sau mecanică, cu recuperare de căldură, inclusiv ventilarea subsolului. Diluează concentrația fără să piardă eficiența energetică a clădirii; nu elimină sursa.</p></div>
+        <div class="panel"><h3>Presurizarea controlată</h3><p>Presiune interioară mai mare decât în sol, astfel încât gazul să nu mai fie „aspirat” în clădire. Doar în condiții specifice.</p></div>
+        <div class="panel"><h3>Membrane antiradon</h3><p>Limitează migrarea gazului din sol. Mai ușor de aplicat la clădiri noi, unde intră în proiect de la început (<a href="/cladiri-noi-si-proiectare/">clădiri noi</a>).</p></div>
+        <div class="panel"><h3>Combinații de metode</h3><p>Alegerea depinde de concentrația măsurată, de construcție, de surse și de costuri. După lucrări, măsurarea de verificare este obligatorie tehnic.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cols-2 reveal">
+      <img class="img-r" src="/images/sectiune.jpg" alt="Căile de pătrundere a radonului din sol în clădire" width="1400" height="788" loading="lazy">
+      <div>
+        <h2>De ce contează diagnosticul</h2>
+        <p>Două clădiri cu aceeași valoare măsurată pot avea nevoie de soluții diferite. Presiunea aerului de la nivelul solului este, în majoritatea clădirilor, mai mică decât afară – aerul interior fiind mai cald – și asta „trage” gazul din sol în clădire. Unde intră, pe unde circulă și cât de etanșă e clădirea decid dacă e nevoie de o simplă etanșare sau de un sistem de depresurizare.</p>
+        <ul class="checks">
+          <li>Inspecția fundației, a subsolului și a materialelor</li>
+          <li>Căile de pătrundere: fisuri, rosturi, treceri de utilități</li>
+          <li>Distribuția radonului între încăperi și niveluri</li>
+          <li>Ventilația și diferențele de presiune interior–exterior</li>
+          <li>Modul de utilizare a clădirii</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap">
+      <div class="section-head reveal"><div><h2>Întrebări frecvente</h2></div></div>
+      <div class="reveal"><Faq items={faq} /></div>
+    </div>
+  </section>
+</Base>

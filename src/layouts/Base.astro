@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  current?: string;
+  image?: string;
+}
+const { title, description, current = '', image = '/images/sectiune.jpg' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title.includes('GMC') ? title : `${title} | GMC Proiect Construct`;
+---
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="sitemap" href="/sitemap-index.xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={new URL(image, Astro.site)}>
+  <meta property="og:locale" content="ro_RO">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'GMC Proiect Construct',
+    url: 'https://gmc-proiect-construct.ro',
+    telephone: '+40722522514',
+    email: 'radon@gmc-proiect-construct.ro',
+    areaServed: 'RO',
+    address: { '@type': 'PostalAddress', streetAddress: 'Str. George Coșbuc nr. 4', addressLocality: 'Iepurești', addressRegion: 'Giurgiu', addressCountry: 'RO' },
+    vatID: '17962239',
+    description: 'Măsurare și remediere radon, proiectare, construcții și eficiență energetică. Membru ARaR.',
+    memberOf: { '@type': 'Organization', name: 'ARaR – Asociația Profesioniștilor în Radon din România', url: 'https://www.radonromania.ro' },
+  })} />
+</head>
+<body>
+  <Header current={current} />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <script>
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      items.forEach((el) => io.observe(el));
+    } else {
+      items.forEach((el) => el.classList.add('in'));
+    }
+  </script>
+</body>
+</html>

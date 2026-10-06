@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+
+const faq = [
+  { q: 'Cât de mult deranjează măsurarea activitatea?', a: 'Deloc. Detectorii pasivi se amplasează discret, nu au nevoie de curent și nu cer nicio schimbare în program. Amplasarea și ridicarea durează sub o oră, iar expunerea este de minimum 90 de zile.' },
+  { q: 'Ce primește angajatorul?', a: 'Buletinul de măsurare de la un laborator desemnat de CNCAN – condiția pentru ca rezultatul să fie recunoscut – pentru fiecare spațiu, comparat cu nivelul de referință de 300 Bq/m³, și, unde este cazul, planul de reducere a expunerii. Documentele intră în dosarul de securitate și sănătate în muncă.' },
+  { q: 'Ce se întâmplă dacă valorile depășesc 300 Bq/m³?', a: 'Metodologia CNCAN cere analizarea situației și măsuri de reducere, prioritizate și realizate în termenele stabilite după nivelul de risc, apoi o măsurare de verificare. Vă însoțim pe tot traseul.' },
+  { q: 'Avem sedii în mai multe județe.', a: 'Acoperim toate județele și planificăm măsurarea în toate locațiile în aceeași perioadă, cu un singur raport centralizat.' },
+];
+---
+<Base title="Radon la locul de muncă – obligațiile angajatorului" description="Măsurarea radonului la locul de muncă este obligatorie pentru spațiile de la subsol și parter: depozite, arhive, laboratoare, saline, stații de metrou, instalații de tratare a apei și altele, precum și pentru clădirile publice. Evaluare, măsurare cu laborator desemnat de CNCAN, raport și soluții." current="/radon-la-locul-de-munca/" image="/images/firma.jpg">
+
+  <section class="page-hero" style="background-image:url('/images/firma.jpg')">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › Radon la locul de muncă</div>
+      <h1>Radon la locul de muncă</h1>
+      <p class="lead">Pentru angajatori și instituții: legislația cere determinarea concentrației de radon în spațiile de lucru de la subsol și parter și în clădirile publice, pe tot cuprinsul țării. Evaluăm, măsurăm cu laborator desemnat de CNCAN, livrăm buletinul și, dacă e nevoie, soluția.</p>
+      <div class="cta-row" style="margin-top:24px">
+        <a class="btn primary" href="/contact/">Cere ofertă pentru firmă</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cols-2 reveal">
+      <div>
+        <h2>Unde este obligatorie măsurarea</h2>
+        <p>Planul Național de Acțiune la Radon (HG 526/2018) și metodologia CNCAN (Ordinul 153/2023) stabilesc obligația de a determina concentrația de radon, indiferent de zona de prioritate, pentru:</p>
+        <ul class="checks">
+          <li><strong>Locuri de muncă din subteran și de la parter</strong> – stații de metrou, saline, mine, cariere, grote și peșteri, instalații de tratare a apei, extracții de materii prime, ciupercării, depozite, arhive, biblioteci, laboratoare, centre de relaxare.</li>
+          <li><strong>Clădiri cu acces public și clădiri publice</strong> – primării, prefecturi, sedii de poliție, unități școlare, creșe, grădinițe, unități sanitare, cluburi sportive, teatre, cinematografe și altele.</li>
+        </ul>
+        <p>Nivelul de referință este de <strong>300 Bq/m³</strong>, medie anuală. Angajatorul evaluează expunerea la radon și ia măsurile necesare pentru protecția lucrătorilor.</p>
+      </div>
+      <img class="img-r" src="/images/firma.jpg" alt="Amplasarea unui detector de radon într-un birou la parter" width="1536" height="1024" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>Ce primiți</h2>
+          <p class="intro">Un dosar complet, nu doar niște cifre.</p>
+        </div>
+      </div>
+      <div class="cols-4 reveal">
+        <div class="panel"><h3>Evaluarea spațiilor</h3><p>Identificăm încăperile care intră sub obligație și numărul de detectori, pentru fiecare sediu.</p></div>
+        <div class="panel"><h3>Măsurarea</h3><p>Detectori pasivi, minimum 90 de zile, analizați de LiRaCC – laborator desemnat de CNCAN, proceduri conform ISO 11665.</p></div>
+        <div class="panel"><h3>Buletinul și raportul</h3><p>Valorile pe fiecare spațiu, comparate cu nivelul de referință, în format util pentru dosarul SSM, pentru conducere și pentru autorități.</p></div>
+        <div class="panel"><h3>Planul de reducere</h3><p>Unde este cazul: etanșare, ventilare, depresurizare – executate de echipa noastră și verificate prin remăsurare. <a href="/remediere-radon/">Cum lucrăm</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cols-2 reveal">
+      <img class="img-r" src="/images/harta.jpg" alt="Harta potențialului de radon în România" width="860" height="608" loading="lazy">
+      <div>
+        <h2>De ce nu ajunge harta</h2>
+        <p>Harta națională a radonului rezidențial arată unde probabilitatea este mai mare, nu ce valoare există într-un anumit spațiu. Din peste 9.000 de măsurători în 6.374 de locuințe, media în România este de 181 Bq/m³ (față de 104 Bq/m³ în Europa), iar aproximativ 15% dintre măsurători depășesc 300 Bq/m³ – inclusiv în zone considerate „liniștite”.</p>
+        <p>Pentru un angajator, obligația nu depinde de zona de pe hartă, ci de tipul spațiului. Iar valoarea reală o dă doar măsurarea.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap">
+      <div class="section-head reveal"><div><h2>Întrebări frecvente</h2></div></div>
+      <div class="reveal"><Faq items={faq} /></div>
+    </div>
+  </section>
+</Base>

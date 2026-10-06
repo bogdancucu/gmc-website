@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+<Base title="Contact" description="Contactați GMC Proiect Construct pentru o evaluare gratuită: telefon, WhatsApp, e-mail sau formular. Acoperim toate județele din România." current="/contact/">
+
+  <section class="page-hero" style="background-image:url('/images/sectiune.jpg')">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › Contact</div>
+      <h1>Hai să măsurăm</h1>
+      <p class="lead">Spuneți-ne ce clădire aveți și în ce județ. Vă contactăm pentru a stabili data evaluării gratuite și vă trimitem oferta scrisă.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cols-2" style="align-items:start">
+      <div>
+        <h2>Cerere de evaluare</h2>
+        <p class="muted">Durează un minut. Nu cerem date pe care nu le folosim.</p>
+        <ContactForm />
+      </div>
+      <div>
+        <div class="panel" style="margin-bottom:16px">
+          <h3>Direct</h3>
+          <p style="margin-bottom:8px"><a href="tel:+40722522514" style="font-weight:700">+40 722 522 514</a></p>
+          <p><a href="mailto:radon@gmc-proiect-construct.ro">radon@gmc-proiect-construct.ro</a></p>
+        </div>
+        <div class="panel" style="margin-bottom:16px">
+          <h3>Program</h3>
+          <p>Luni – Vineri, 9:00 – 18:00<br>Evaluările la fața locului se programează și în afara programului, la cerere.</p>
+        </div>
+        <div class="panel">
+          <h3>Acoperire</h3>
+          <p>Toate județele din România. Pentru sedii multiple planificăm măsurarea în aceeași perioadă, cu raport centralizat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,40 @@
+---
+const { current = '' } = Astro.props;
+const links = [
+  { href: '/masurare-radon/', label: 'Măsurare radon' },
+  { href: '/remediere-radon/', label: 'Remediere' },
+  { href: '/radon-la-locul-de-munca/', label: 'Pentru firme' },
+  { href: '/cladiri-noi-si-proiectare/', label: 'Clădiri noi' },
+  { href: '/despre/', label: 'Despre' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="GMC Proiect Construct – prima pagină">
+      <img src="/images/logo-gmc.png" alt="GMC Proiect Construct" width="800" height="366">
+    </a>
+    <button class="nav-toggle" aria-label="Meniu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Meniu principal">
+      {links.map((l) => (
+        <a href={l.href} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a>
+      ))}
+      <a class="btn primary" href="/contact/">Cere o evaluare</a>
+    </nav>
+  </div>
+</header>
+<div class="mobile-cta">
+  <a class="call" href="tel:+40722522514">Sună acum</a>
+  <a class="wa" href="https://wa.me/40722522514" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+<script>
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('nav');
+  btn?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>

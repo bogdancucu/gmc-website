@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const fmt = (d: Date) => d.toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base title={post.data.title} description={post.data.description} current="/blog/" image={post.data.image ?? '/images/sectiune.jpg'}>
+  <section class="page-hero" style={`background-image:url('${post.data.image ?? '/images/sectiune.jpg'}')`}>
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › <a href="/blog/">Blog</a></div>
+      <h1>{post.data.title}</h1>
+      <p class="lead">{post.data.description}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap prose">
+      <p class="post-meta">{fmt(post.data.date)} · GMC Proiect Construct</p>
+      <Content />
+    </div>
+  </section>
+</Base>

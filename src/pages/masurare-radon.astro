@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+
+const faq = [
+  { q: 'Ce înseamnă CARIA?', a: 'Concentrația anuală de radon în aerul interior – media pe un an, exprimată în Bq/m³. Este valoarea pe care legislația o compară cu nivelul de referință de 300 Bq/m³. De aceea măsurarea de depistare se face cu detectori pasivi, pe minimum 90 de zile, nu cu un aparat ținut câteva ore.' },
+  { q: 'Trebuie să schimb ceva în casă pe durata măsurării?', a: 'Nu. Măsurarea se face în condiții normale de locuire, exact ca să vedem la ce concentrație sunteți expus în fiecare zi. Singura regulă: detectorul rămâne la locul lui, nu se deschide și nu se mută.' },
+  { q: 'Detectorul este periculos sau consumă curent?', a: 'Nu. Este o cutie mică de plastic cu o peliculă sensibilă la particulele alfa (CR-39). Nu are baterii, nu emite nimic, nu afectează aparatura electronică.' },
+  { q: 'Ce primesc la final?', a: 'Buletinul de măsurare emis de laborator – cu concentrația pentru fiecare încăpere, comparată cu nivelul de referință – și recomandările noastre: nimic de făcut, măsuri simple de ventilare sau un plan de remediere. Pentru clădiri publice și locuri de muncă, buletinul de la un laborator desemnat de CNCAN este condiția pentru ca rezultatul să fie recunoscut.' },
+  { q: 'Cât costă?', a: 'Evaluarea de la fața locului este gratuită. Costul măsurării depinde de numărul de detectori și de amplasarea clădirii; primiți oferta scrisă înainte de orice angajament.' },
+];
+---
+<Base title="Măsurare radon în locuințe și clădiri" description="Măsurare radon cu detectori pasivi CR-39, minimum 90 de zile, conform Ordinului CNCAN 153/2023 și ISO 11665, analizată de LiRaCC – laboratorul de radon al UBB Cluj-Napoca, desemnat de CNCAN. Evaluare gratuită la fața locului, în toată România." current="/masurare-radon/" image="/images/detector.jpg">
+
+  <section class="page-hero" style="background-image:url('/images/detector.jpg')">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › Măsurare radon</div>
+      <h1>Măsurare radon</h1>
+      <p class="lead">Nici harta de risc, nici anul construcției, nici impresia că aerisiți suficient nu spun ce valoare aveți într-o încăpere. Două case vecine pot avea valori foarte diferite. Singurul mod de a ști este măsurarea – corectă, pe o perioadă reprezentativă, după metodologia în vigoare.</p>
+      <div class="cta-row" style="margin-top:24px">
+        <a class="btn primary" href="/contact/">Programează o evaluare gratuită</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cols-2 reveal">
+      <div>
+        <h2>Pentru cine este măsurarea</h2>
+        <ul class="checks">
+          <li><strong>Locuințe</strong> – case cu demisol sau subsol, apartamente la parter, locuințe renovate energetic sau bine etanșate. Măsurarea nu este obligatorie, dar este recomandată: e singura cale de a afla expunerea reală.</li>
+          <li><strong>Locuri de muncă</strong> la subsol și parter – obligatorie pentru angajatori (<a href="/radon-la-locul-de-munca/">detalii pentru firme</a>).</li>
+          <li><strong>Clădiri publice</strong> – școli, grădinițe, creșe, spitale, primării și alte instituții: monitorizare obligatorie.</li>
+          <li><strong>Clădiri noi</strong> – la finalizare sau, mai bine, cu prevenirea radonului prevăzută din proiect (<a href="/cladiri-noi-si-proiectare/">clădiri noi și proiectare</a>).</li>
+          <li><strong>După o renovare energetică</strong> – termoizolare, geamuri noi, etanșare: schimbul de aer mai mic înseamnă concentrații mai mari.</li>
+        </ul>
+      </div>
+      <img class="img-r" src="/images/verificare.jpg" alt="Discutarea rezultatelor măsurării cu proprietarul" width="1400" height="933" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>Cum decurge măsurarea</h2>
+          <p class="intro">Măsurarea de depistare durează minimum 90 de zile. Nu vă schimbă rutina, dar ne spune exact unde stați.</p>
+        </div>
+      </div>
+      <div class="process vertical reveal" style="max-width:860px">
+        <div><h3>Evaluare gratuită la fața locului</h3><p>Ne uităm la clădire – fundație, demisol, ventilare, renovări recente – și stabilim câți detectori trebuie și în ce încăperi. Completăm împreună chestionarul laboratorului cu datele clădirii.</p></div>
+        <div><h3>Amplasarea detectorilor</h3><p>Detectori pasivi CR-39, sigilați și codificați de laborator, puși în încăperile cele mai folosite (de regulă la parter: living, dormitor, birou), la 1–2 m de pardoseală, la cel puțin 30 cm de perete, departe de uși, geamuri, guri de ventilație și surse de căldură.</p></div>
+        <div><h3>Expunere minimum 90 de zile</h3><p>Detectorii înregistrează expunerea cumulată. Nu se deschid, nu se mută. Durata este cerută de metodologie: o măsurare de câteva ore sau zile nu caracterizează expunerea anuală.</p></div>
+        <div><h3>Ridicare și analiză în laborator</h3><p>Ridicăm detectorii, notăm data, îi sigilăm și îi trimitem la LiRaCC – Laboratorul de Încercări Radon „Constantin Cosma” al Universității Babeș-Bolyai din Cluj-Napoca, laborator desemnat de CNCAN, cu proceduri conform ISO 11665.</p></div>
+        <div><h3>Buletinul de măsurare și pasul următor</h3><p>Primiți concentrația pentru fiecare încăpere, comparată cu nivelul de referință de 300 Bq/m³. Sub nivel: nimic de făcut, repetați măsurarea după renovări sau schimbări de ventilație. Peste nivel: trecem la diagnostic și <a href="/remediere-radon/">planul de remediere</a>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cols-2 reveal">
+      <img class="img-r" src="/images/amplasare.jpg" alt="Amplasarea detectorului pasiv de radon pe un raft" width="1400" height="933" loading="lazy">
+      <div>
+        <h2>Detectori pasivi sau aparate active?</h2>
+        <p><strong>Detectorii pasivi</strong> (CR-39) sunt metoda de referință pentru depistare: fără curent, înregistrează expunerea pe luni întregi și determină CARIA – concentrația anuală pe care o cere legislația.</p>
+        <p><strong>Aparatele active</strong> înregistrează concentrația la intervale scurte și arată variațiile pe ore și zile. Le folosim în etapa de diagnostic și la verificarea remedierii, nu în locul măsurării de depistare.</p>
+        <div class="note">Temperatura, presiunea, precipitațiile, ventilația și felul în care e folosită clădirea schimbă valorile de la o zi la alta. De aceea o măsurătoare scurtă, oricât de modernă ar fi aparatul, nu înlocuiește măsurarea integrată pe minimum 90 de zile.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>Întrebări frecvente</h2>
+        </div>
+      </div>
+      <div class="reveal"><Faq items={faq} /></div>
+    </div>
+  </section>
+</Base>

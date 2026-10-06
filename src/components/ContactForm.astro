@@ -1,0 +1,51 @@
+---
+// Cheia Web3Forms (gratuit): https://web3forms.com – se primește pe e-mail în 1 minut.
+const ACCESS_KEY = 'PUNE-AICI-CHEIA-WEB3FORMS';
+const { subject = 'Cerere de pe site – GMC Proiect Construct' } = Astro.props;
+---
+<form class="form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value={ACCESS_KEY}>
+  <input type="hidden" name="subject" value={subject}>
+  <input type="hidden" name="from_name" value="Site GMC Proiect Construct">
+  <input type="hidden" name="redirect" value="https://gmc-proiect-construct.ro/multumim/">
+  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+  <div class="row">
+    <label>Nume<input type="text" name="nume" required autocomplete="name"></label>
+    <label>Telefon<input type="tel" name="telefon" required autocomplete="tel"></label>
+  </div>
+  <div class="row">
+    <label>E-mail<input type="email" name="email" autocomplete="email"></label>
+    <label>Județ / localitate<input type="text" name="localitate" required></label>
+  </div>
+  <div class="row">
+    <label>Tipul clădirii
+      <select name="tip_cladire" required>
+        <option value="">Alegeți…</option>
+        <option>Locuință (casă)</option>
+        <option>Apartament (parter / demisol)</option>
+        <option>Birouri / spațiu comercial</option>
+        <option>Hală / depozit</option>
+        <option>Clădire publică (școală, spital, primărie)</option>
+        <option>Clădire nouă / în proiectare</option>
+      </select>
+    </label>
+    <label>Ce vă interesează
+      <select name="serviciu" required>
+        <option value="">Alegeți…</option>
+        <option>Măsurare radon</option>
+        <option>Remediere radon</option>
+        <option>Radon la locul de muncă</option>
+        <option>Proiectare / clădire nouă</option>
+        <option>Altceva</option>
+      </select>
+    </label>
+  </div>
+  <label>Mesaj (opțional)<textarea name="mesaj" rows="4" placeholder="Ex.: casă cu demisol, 2 niveluri, construită în 2015, renovată energetic anul trecut."></textarea></label>
+  <label style="display:flex;gap:10px;align-items:flex-start;font-weight:500">
+    <input type="checkbox" name="acord" required style="width:auto;margin-top:4px">
+    <span>Sunt de acord ca datele de mai sus să fie folosite pentru a fi contactat în legătură cu cererea mea. <a href="/confidentialitate/">Politica de confidențialitate</a>.</span>
+  </label>
+  <div>
+    <button class="btn primary" type="submit">Trimite cererea</button>
+  </div>
+</form>
