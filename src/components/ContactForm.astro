@@ -1,9 +1,11 @@
 ---
 // Cheia Web3Forms (gratuit): https://web3forms.com – se primește pe e-mail în 1 minut.
-const ACCESS_KEY = 'PUNE-AICI-CHEIA-WEB3FORMS';
+// Cheia Web3Forms vine din variabila de mediu PUBLIC_WEB3FORMS_KEY:
+// local din fișierul .env (ignorat de git), pe GitHub din secretul WEB3FORMS_KEY (vezi deploy.yml).
+const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 const { subject = 'Cerere de pe site – GMC Proiect Construct' } = Astro.props;
 ---
-<form class="form" action="https://api.web3forms.com/submit" method="POST">
+<form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
   <input type="hidden" name="access_key" value={ACCESS_KEY}>
   <input type="hidden" name="subject" value={subject}>
   <input type="hidden" name="from_name" value="Site GMC Proiect Construct">
@@ -47,5 +49,31 @@ const { subject = 'Cerere de pe site – GMC Proiect Construct' } = Astro.props;
   </label>
   <div>
     <button class="btn primary" type="submit">Trimite cererea</button>
+    <p class="form-status" role="status" aria-live="polite" hidden></p>
   </div>
 </form>
+
+<script>
+  // Trimitem prin fetch, ca vizitatorul să rămână pe site și să ajungă pe /multumim/ (merge și local).
+  // Fără JavaScript, formularul se trimite clasic și Web3Forms folosește câmpul „redirect”.
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = form?.querySelector<HTMLElement>('.form-status');
+  const btn = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    data.delete('redirect');
+    if (btn) { btn.disabled = true; btn.textContent = 'Se trimite…'; }
+    if (status) status.hidden = true;
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.success !== false) { window.location.href = '/multumim/'; return; }
+      throw new Error(json.message || 'Eroare la trimitere');
+    } catch {
+      if (status) { status.hidden = false; status.textContent = 'Nu am putut trimite cererea. Vă rugăm să ne sunați la +40 722 522 514 sau să scrieți la radon@gmc-proiect-construct.ro.'; }
+      if (btn) { btn.disabled = false; btn.textContent = 'Trimite cererea'; }
+    }
+  });
+</script>

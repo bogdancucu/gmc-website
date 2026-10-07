@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Lista actelor normative relevante pentru radon în clădiri. Linkurile duc la textele oficiale.
+const grupuri = [
+  {
+    titlu: 'Cadrul european',
+    acte: [
+      { nume: 'Directiva 2013/59/Euratom', sub: 'Normele de securitate de bază privind protecția împotriva radiațiilor ionizante', ce: 'Baza europeană pentru radon: art. 54 (expunerea la locul de muncă), art. 74 (expunerea în locuințe), art. 103 (planul național de acțiune) și anexa XVIII. Stabilește că nivelul de referință nu poate depăși 300 Bq/m³ (medie anuală).', link: 'https://eur-lex.europa.eu/legal-content/RO/TXT/?uri=CELEX:32013L0059' },
+      { nume: 'Directiva (UE) 2024/1275', sub: 'Performanța energetică a clădirilor (reformată)', ce: 'Leagă performanța energetică de sănătatea ocupanților și de calitatea aerului interior. Clădirile eficiente trebuie să rămână și sănătoase – de aici importanța măsurării radonului după renovări energetice.', link: 'https://eur-lex.europa.eu/legal-content/RO/TXT/?uri=CELEX:32024L1275' },
+      { nume: 'Regulamentul (UE) 305/2011', sub: 'Produsele pentru construcții', ce: 'Cerința fundamentală nr. 3, „igienă, sănătate și mediu”, include protecția față de emisia de radiații periculoase. Prin ea radonul intră în Legea calității în construcții.', link: 'https://eur-lex.europa.eu/legal-content/RO/TXT/?uri=CELEX:32011R0305' },
+    ],
+  },
+  {
+    titlu: 'Legislația națională',
+    acte: [
+      { nume: 'Legea 111/1996', sub: 'Desfășurarea în siguranță a activităților nucleare (republicată)', ce: 'Legea-cadru în domeniul nuclear și al radioprotecției; stabilește rolul și competențele CNCAN.', link: 'https://www.cncan.ro/legislatie/legi/' },
+      { nume: 'Legea 63/2018', sub: 'Modificarea și completarea Legii 111/1996', ce: 'Transpune Directiva 2013/59/Euratom în legislația românească, inclusiv obligațiile privind expunerea la radon.', link: 'https://www.cncan.ro/legislatie/legi/' },
+      { nume: 'HG 526/2018', sub: 'Planul Național de Acțiune la Radon (PNAR)', ce: 'Transpune planul de acțiune cerut de directivă: obiective, responsabilități, zonele de prioritate și tipurile de clădiri pentru care măsurarea este obligatorie. CNCAN coordonează aplicarea. Publicată în M. Of. nr. 645/25.07.2018.', link: 'https://legislatie.just.ro/Public/DetaliiDocument/203132' },
+      { nume: 'Legea 10/1995', sub: 'Calitatea în construcții', ce: 'Cerința fundamentală „igienă, sănătate și mediu înconjurător” este temeiul reglementărilor tehnice RTC 6 și RTC 7.', link: '' },
+      { nume: 'Legea 319/2006', sub: 'Securitatea și sănătatea în muncă', ce: 'Cadrul în care angajatorul evaluează riscurile profesionale; buletinul de măsurare a radonului și planul de reducere intră în dosarul SSM.', link: '' },
+    ],
+  },
+  {
+    titlu: 'Norme și metodologii CNCAN',
+    acte: [
+      { nume: 'Ordinul CNCAN 153/2023', sub: 'Metodologia pentru determinarea concentrației de radon în aerul din interiorul clădirilor și de la locurile de muncă', ce: 'Documentul de bază pentru măsurare: definește CARIA (concentrația anuală), cere măsurare integrată de minimum 90 de zile cu detectori pasivi, metode conform ISO 11665, laboratoare desemnate de CNCAN și termenele de remediere (de regulă 12 sau 18 luni, după nivelul de risc). Publicat în M. Of. din 2023.', link: 'https://legislatie.just.ro/Public/DetaliiDocument/273601' },
+      { nume: 'Normele privind cerințele de bază de securitate radiologică', sub: 'Ordinul comun CNCAN / Ministerul Sănătății / Ministerul Muncii nr. 752/3.978/136/2018', ce: 'Stabilesc nivelul de referință de 300 Bq/m³ ca medie anuală pentru locuințe, clădiri publice și locuri de muncă, și obligațiile angajatorului la depășirea lui.', link: 'https://www.cncan.ro/legislatie/' },
+      { nume: 'Lista laboratoarelor desemnate de CNCAN', sub: 'Laboratoare de încercări pentru radon', ce: 'Doar buletinele emise de un laborator din această listă sunt recunoscute. Noi lucrăm cu LiRaCC – Laboratorul de Încercări Radon „Constantin Cosma” al UBB Cluj-Napoca.', link: 'https://www.cncan.ro/assets/Radon/2023/2023Lista-lab-desemnateincercari-radon.pdf' },
+    ],
+  },
+  {
+    titlu: 'Reglementări tehnice MDLPA',
+    acte: [
+      { nume: 'RTC 6-2022', sub: 'Ghidul privind metodele de remediere în clădiri existente pentru reducerea nivelului de expunere la radon', ce: 'Metodele de reducere pentru clădirile existente: depresurizarea solului, etanșarea căilor de pătrundere, ventilația, presurizarea, membranele și combinațiile lor. Aprobat prin ordin MDLPA din 13.10.2023, publicat în M. Of. nr. 967 bis/25.10.2023.', link: 'https://legislatie.just.ro/Public/DetaliiDocument/275744' },
+      { nume: 'RTC 7-2022', sub: 'Ghidul privind metodele de prevenire și control al pătrunderii radonului în clădirile noi', ce: 'Prevenirea radonului din proiect: evaluarea terenului (concentrația în sol, permeabilitate, indice de risc) și nivelul de protecție constructivă în funcție de risc. Aprobat prin ordin MDLPA din 13.10.2023.', link: 'https://legislatie.just.ro/Public/DetaliiDocument/275792' },
+    ],
+  },
+  {
+    titlu: 'Standarde și referințe tehnice',
+    acte: [
+      { nume: 'SR EN ISO 11665', sub: 'Măsurarea radioactivității în mediu – aer: radon-222', ce: 'Seria de standarde cerută de metodologia CNCAN. Relevante mai ales partea 1 (principii), partea 4 (măsurare integrată cu detectori pasivi) și partea 8 (investigații inițiale și suplimentare în clădiri).', link: 'https://www.iso.org/search.html?q=ISO%2011665' },
+      { nume: 'OMS – Handbook on Indoor Radon (2009)', sub: 'Organizația Mondială a Sănătății', ce: 'Recomandă un nivel de referință de 100 Bq/m³ și, acolo unde nu este fezabil, cel mult 300 Bq/m³. Sursa estimării că radonul cauzează 3–14% dintre cancerele pulmonare.', link: 'https://www.who.int/publications/i/item/9789241547673' },
+      { nume: 'ICRP Publication 126', sub: 'Comisia Internațională de Protecție Radiologică', ce: 'Principiile protecției radiologice împotriva expunerii la radon, pe care se bazează directiva europeană.', link: 'https://www.icrp.org/publication.asp?id=ICRP%20Publication%20126' },
+      { nume: 'Instrucțiunile LiRaCC', sub: 'Amplasarea detectorului pasiv CR-39', ce: 'Regulile practice pe care le aplicăm la fiecare măsurare: unde se pune detectorul, la ce distanțe, cât stă și ce nu trebuie făcut.', link: '/noutati/cum-se-amplaseaza-detectorul-de-radon/' },
+    ],
+  },
+];
+---
+<Base title="Legislația privind radonul în România" description="Lista completă a actelor normative privind radonul în clădiri: Directiva 2013/59/Euratom, HG 526/2018 (PNAR), Ordinul CNCAN 153/2023, RTC 6-2022, RTC 7-2022, ISO 11665 – cu linkuri către textele oficiale." current="/legislatie/" image="/images/documente.jpg">
+
+  <section class="page-hero" style="background-image:url('/images/documente.jpg')">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › Legislație</div>
+      <h1>Legislația privind radonul</h1>
+      <p class="lead">Toate actele normative care contează pentru radonul din clădiri, de la directiva europeană la ghidurile tehnice de construcții, cu linkuri către textele oficiale. Pe scurt, ce stabilește fiecare și de ce contează pentru dumneavoastră.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="note reveal" style="max-width:860px;margin-bottom:12px">Nivelul național de referință este de <strong>300 Bq/m³</strong>, ca medie anuală. Măsurarea este obligatorie pentru locurile de muncă de la subsol și parter și pentru clădirile publice, și recomandată pentru locuințe. Explicăm pe scurt în articolul <a href="/noutati/cadrul-legal-radon-romania/">Cadrul legal al radonului în România</a>.</div>
+    </div>
+  </section>
+
+  {grupuri.map((g, i) => (
+    <section class={`section${i % 2 === 0 ? ' mist' : ''}`} style="padding-top:36px;padding-bottom:36px">
+      <div class="wrap">
+        <h2 style="font-size:26px">{g.titlu}</h2>
+        <div class="laws">
+          {g.acte.map((a) => (
+            <article class="law reveal">
+              <div class="law-head">
+                <h3>{a.nume}</h3>
+                <p class="law-sub">{a.sub}</p>
+              </div>
+              <div class="law-body">
+                <p>{a.ce}</p>
+                {a.link && <a href={a.link} target={a.link.startsWith('/') ? undefined : '_blank'} rel={a.link.startsWith('/') ? undefined : 'noopener'}>{a.link.startsWith('/') ? 'Citiți articolul' : 'Textul oficial'}</a>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="section">
+    <div class="wrap">
+      <p class="muted reveal" style="max-width:760px">Lista este orientativă și o actualizăm pe măsură ce apar modificări. Pentru aplicarea la o clădire anume – ce obligații aveți, ce trebuie măsurat și cum – <a href="/contact/">scrieți-ne</a>: evaluarea la fața locului este gratuită.</p>
+    </div>
+  </section>
+</Base>

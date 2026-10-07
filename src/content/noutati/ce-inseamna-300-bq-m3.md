@@ -1,8 +1,10 @@
 ---
 title: "Ce înseamnă 300 Bq/m³ și ce faci dacă ai mai mult"
 description: "Nivelul național de referință pentru radon, explicat simplu: ce măsoară, de unde vine cifra și care sunt pașii dacă raportul arată o valoare mai mare."
-date: 2026-10-06
+date: 2026-09-08
 image: /images/sectiune.jpg
+tip: informare
+tags: [Măsurare, Remediere]
 ---
 
 **300 Bq/m³ este nivelul național de referință pentru concentrația de radon în clădiri.** Nu este o limită „sigur / periculos”, ci pragul de la care se recomandă să reduceți expunerea. Riscul crește treptat cu concentrația și cu timpul petrecut în clădire – de aceea contează media anuală, nu o valoare de moment.

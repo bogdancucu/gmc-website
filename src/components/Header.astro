@@ -6,8 +6,8 @@ const links = [
   { href: '/radon-la-locul-de-munca/', label: 'Pentru firme' },
   { href: '/cladiri-noi-si-proiectare/', label: 'Clădiri noi' },
   { href: '/despre/', label: 'Despre' },
-  { href: '/blog/', label: 'Blog' },
-  { href: '/contact/', label: 'Contact' },
+  { href: '/legislatie/', label: 'Legislație' },
+  { href: '/noutati/', label: 'Noutăți' },
 ];
 ---
 <header class="site-header">
@@ -22,7 +22,7 @@ const links = [
       {links.map((l) => (
         <a href={l.href} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a>
       ))}
-      <a class="btn primary" href="/contact/">Cere o evaluare</a>
+      <a class="btn primary" href="/contact/" aria-current={current === '/contact/' ? 'page' : undefined}>Contact</a>
     </nav>
   </div>
 </header>

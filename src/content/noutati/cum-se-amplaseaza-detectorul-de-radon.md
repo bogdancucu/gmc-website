@@ -1,8 +1,10 @@
 ---
 title: "Cum se amplasează un detector de radon și ce faceți cât timp măsoară"
 description: "Regulile de amplasare a detectorului pasiv CR-39, după instrucțiunile laboratorului LiRaCC: unde se pune, la ce distanțe, cât stă și ce nu trebuie să faceți."
-date: 2026-10-12
+date: 2026-09-26
 image: /images/amplasare.jpg
+tip: informare
+tags: [Măsurare, Detectori]
 ---
 
 **Detectorul se pune în încăperile cele mai folosite, la 1–2 metri de pardoseală, la cel puțin 30 cm de perete, departe de uși, geamuri și calorifere, și rămâne acolo minimum 90 de zile.** Noi îl amplasăm și îl ridicăm, dar e bine să știți regulile – în primul rând ca să nu-l mutați.
@@ -31,4 +33,4 @@ Pe eticheta detectorului se trec data amplasării, data ridicării și identific
 
 Nimic special. Locuiți normal – nu aerisiți mai mult decât de obicei și nici mai puțin. Scopul este să aflăm la ce sunteți expus în fiecare zi, nu într-o zi „de probă”.
 
-*Sursa: Instrucțiuni de amplasare a detectorului de radon CR-39, LiRaCC – Laboratorul de Încercări Radon „Constantin Cosma”, UBB Cluj-Napoca, laborator desemnat de CNCAN (NSR-08, SR EN ISO/CEI 17025).*
+*Sursa: Instrucțiuni de amplasare a detectorului de radon CR-39, [LiRaCC](https://radon.enviro.ubbcluj.ro) – Laboratorul de Încercări Radon „Constantin Cosma”, UBB Cluj-Napoca, laborator desemnat de CNCAN (NSR-08, SR EN ISO/CEI 17025).*

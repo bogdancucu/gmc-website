@@ -5,7 +5,7 @@ const firma = {
   nume: 'GMC Proiect Construct SRL',
   cui: '17962239',
   regCom: 'J2005015832404',
-  sediu: 'Str. George Coșbuc nr. 4, Sat Iepurești, Com. Iepurești, Jud. Giurgiu',
+  sediu: 'Str. George Coșbuc nr. 4, Iepurești, Jud. Giurgiu',
 };
 const social = [
   { name: 'Facebook', href: '#', icon: 'M14 8h2.5V5H14c-2.2 0-3.5 1.4-3.5 3.6V10H8v3h2.5v7h3v-7H16l.5-3h-3V8.8c0-.5.2-.8.5-.8z' },
@@ -18,28 +18,23 @@ const social = [
 <footer class="site-footer">
   <div class="wrap">
     <div class="row">
-      <div class="brand">
-        <img src="/images/logo-gmc.png" alt="GMC Proiect Construct" width="170" height="78" style="width:170px">
-        <div class="social">
-          {social.map((s) => (
-            <a href={s.href} aria-label={s.name} title={s.name} target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={s.icon}></path></svg>
-            </a>
-          ))}
-        </div>
-      </div>
+      <a class="flogo" href="/" aria-label="GMC Proiect Construct – prima pagină"><img src="/images/logo-gmc.png" alt="GMC Proiect Construct" width="130" height="60"></a>
       <div class="contact">
         <a class="big" href="tel:+40722522514">+40 722 522 514</a>
         <a href="mailto:radon@gmc-proiect-construct.ro">radon@gmc-proiect-construct.ro</a>
         <span>Luni – vineri, 9:00 – 18:00</span>
       </div>
-    </div>
-    <div class="legal">
-      {firma.nume} · {firma.cui} · {firma.regCom} · {firma.sediu}
+      <div class="social">
+        {social.map((s) => (
+          <a href={s.href} aria-label={s.name} title={s.name} target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={s.icon}></path></svg>
+          </a>
+        ))}
+      </div>
     </div>
     <div class="bottom">
-      <span>© {year} {firma.nume}</span>
-      <span><a href="/confidentialitate/">Politica de confidențialitate</a> · <a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a></span>
+      <span>© {year} {firma.nume} · CUI {firma.cui} · {firma.regCom} · {firma.sediu}</span>
+      <span><a href="/legislatie/">Legislație</a> · <a href="/confidentialitate/">Politica de confidențialitate</a> · <a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a></span>
     </div>
   </div>
 </footer>

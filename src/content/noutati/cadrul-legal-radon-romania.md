@@ -1,8 +1,10 @@
 ---
 title: "Cadrul legal al radonului în România, pe scurt"
 description: "Ce documente contează, ce stabilește fiecare și pentru cine este obligatorie măsurarea: de la Directiva Euratom la metodologia CNCAN și reglementările tehnice RTC 6 și RTC 7."
-date: 2026-10-08
+date: 2026-09-22
 image: /images/documente.jpg
+tip: informare
+tags: [Legislație, Măsurare]
 ---
 
 **România are un cadru complet pentru gestionarea radonului în clădiri, iar pentru clădirile publice și locurile de muncă de la subsol și parter măsurarea este obligatorie.** Pentru locuințe este recomandată. Iată documentele, în ordinea în care se aplică.
@@ -35,4 +37,6 @@ Pentru **locuințele private** măsurarea nu este obligatorie, dar este recomand
 
 Pentru ca rezultatul să fie recunoscut, buletinul trebuie să provină de la un **laborator desemnat de CNCAN**, care aplică metodologia națională și procedurile ISO 11665, cu control al calității și participare la intercomparări. Noi lucrăm cu LiRaCC – laboratorul de radon al Universității Babeș-Bolyai din Cluj-Napoca. [Cum decurge măsurarea →](/masurare-radon/)
 
-*Sursa: prezentarea ARaR „Clădiri eficiente, dar și sănătoase – provocarea radonului”, ECI Forum, septembrie 2026.*
+Lista completă a actelor normative, cu linkuri către textele oficiale, este pe pagina [Legislație](/legislatie/).
+
+*Sursa: prezentarea [ARaR](https://radonromania.ro) „Clădiri eficiente, dar și sănătoase – provocarea radonului”, ECI Forum, septembrie 2026.*

@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('noutati');
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const fmt = (d: Date) => d.toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' });
+const tipLabel = { informare: 'Informare', noutati: 'De la noi' } as const;
+const img = post.data.image ?? '/images/sectiune.jpg';
+
+// alte articole din aceeași categorie
+const altele = (await getCollection('noutati'))
+  .filter((p) => p.id !== post.id && p.data.tip === post.data.tip)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+---
+<Base title={post.data.title} description={post.data.description} current="/noutati/" image={img}>
+  <section class="page-hero" style={`background-image:url('${img}')`}>
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › <a href="/noutati/">Noutăți</a> › <a href={`/noutati/?tip=${post.data.tip}`}>{tipLabel[post.data.tip]}</a></div>
+      <h1>{post.data.title}</h1>
+      <p class="lead">{post.data.description}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap prose">
+      <p class="post-meta">
+        <span class={`badge ${post.data.tip}`}>{tipLabel[post.data.tip]}</span>
+        {fmt(post.data.date)} · GMC Proiect Construct
+      </p>
+      <Content />
+      {post.data.tags.length > 0 && (
+        <div class="tags" style="margin-top:28px">
+          {post.data.tags.map((t) => <a href={`/noutati/?tag=${encodeURIComponent(t)}`}>{t}</a>)}
+        </div>
+      )}
+    </div>
+  </section>
+  {altele.length > 0 && (
+    <section class="section mist">
+      <div class="wrap">
+        <h2 style="font-size:26px">{post.data.tip === 'noutati' ? 'Alte noutăți de la noi' : 'Alte articole de informare'}</h2>
+        <div class="posts" style="margin-top:20px">
+          {altele.map((p) => (
+            <article class="post">
+              <a class="post-img" href={`/noutati/${p.id}/`} tabindex="-1" aria-hidden="true"><img src={p.data.image ?? '/images/sectiune.jpg'} alt="" width="1400" height="788" loading="lazy"></a>
+              <div class="body">
+                <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+                <h3><a href={`/noutati/${p.id}/`}>{p.data.title}</a></h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Base>

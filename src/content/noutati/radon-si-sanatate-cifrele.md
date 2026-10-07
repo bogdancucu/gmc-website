@@ -1,8 +1,10 @@
 ---
 title: "Radonul și sănătatea: cifrele care contează"
 description: "Ce spun OMS și studiile epidemiologice despre radon și cancerul pulmonar, cum stă România față de Europa și de ce aceste cifre nu trebuie să sperie, ci să ducă la măsurare."
-date: 2026-10-10
+date: 2026-09-15
 image: /images/casa_iarna.jpg
+tip: informare
+tags: [Sănătate]
 ---
 
 **Radonul este a doua cauză de cancer pulmonar după fumat, iar riscul crește cu aproximativ 16% la fiecare 100 Bq/m³ în plus la concentrația medie de lungă durată.** Expunerea nu produce simptome; efectul depinde de concentrație și de timpul petrecut în acel mediu.
@@ -32,4 +34,4 @@ Din peste 9.000 de măsurători în 6.374 de locuințe (harta națională CNCAN,
 
 Nu panică. Conduită rațională: măsurăm, interpretăm rezultatul, identificăm sursa, aplicăm soluția și verificăm. Radonul este un factor de risc care poate fi controlat la costuri rezonabile. [Programați o evaluare gratuită →](/contact/)
 
-*Surse: OMS – Radon and health; Darby et al., BMJ 2005; Dicu, Cucoș et al., 2023; prezentarea ARaR, ECI Forum 2026.*
+*Surse: OMS – Radon and health; Darby et al., BMJ 2005; Dicu, Cucoș et al., 2023; prezentarea [ARaR](https://radonromania.ro), ECI Forum 2026.*

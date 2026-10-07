@@ -23,6 +23,9 @@ jobs:
         uses: withastro/action@v3
         with:
           node-version: 22
+        env:
+          # Settings → Secrets and variables → Actions → New repository secret: WEB3FORMS_KEY
+          PUBLIC_WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
 
   deploy:
     needs: build

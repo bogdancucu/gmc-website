@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('noutati')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const fmt = (d: Date) => d.toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' });
+const tipLabel = { informare: 'Informare', noutati: 'De la noi' } as const;
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort((a, b) => a.localeCompare(b, 'ro'));
+---
+<Base title="Noutăți – informare despre radon și noutăți de la noi" description="Articole de informare despre radon, măsurare, remediere și clădiri sănătoase, plus noutăți de la GMC Proiect Construct: evenimente, proiecte, participări." current="/noutati/">
+  <section class="page-hero" style="background-image:url('/images/sectiune.jpg')">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › Noutăți</div>
+      <h1>Noutăți</h1>
+      <p class="lead">Două feluri de texte: articole de informare, în care explicăm pe înțelesul tuturor ce ne întreabă clienții, și noutăți de la noi – evenimente, proiecte, lucruri la care am participat.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="filters reveal" role="group" aria-label="Filtrează">
+        <div class="filter-tabs">
+          <button class="is-on" data-tip="">Toate</button>
+          <button data-tip="informare">Informare</button>
+          <button data-tip="noutati">De la noi</button>
+        </div>
+        <div class="filter-tags">
+          {tags.map((t) => <button data-tag={t}>{t}</button>)}
+        </div>
+      </div>
+
+      <div class="posts" id="posts">
+        {posts.map((p) => (
+          <article class="post" data-tip={p.data.tip} data-tags={p.data.tags.join('|')}>
+            <a class="post-img" href={`/noutati/${p.id}/`} tabindex="-1" aria-hidden="true">
+              <img src={p.data.image ?? '/images/sectiune.jpg'} alt="" width="1400" height="788" loading="lazy">
+            </a>
+            <div class="body">
+              <div class="post-top">
+                <span class={`badge ${p.data.tip}`}>{tipLabel[p.data.tip]}</span>
+                <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+              </div>
+              <h3><a href={`/noutati/${p.id}/`}>{p.data.title}</a></h3>
+              <p>{p.data.description}</p>
+              {p.data.tags.length > 0 && <div class="tags">{p.data.tags.map((t) => <span>{t}</span>)}</div>}
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="muted empty" id="empty" hidden>Nu există încă articole pentru filtrul ales.</p>
+    </div>
+  </section>
+
+  <script>
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.filter-tabs button');
+    const tagBtns = document.querySelectorAll<HTMLButtonElement>('.filter-tags button');
+    const cards = document.querySelectorAll<HTMLElement>('#posts .post');
+    const empty = document.getElementById('empty');
+    let tip = '';
+    let tag = '';
+    const apply = () => {
+      let n = 0;
+      cards.forEach((c) => {
+        const okTip = !tip || c.dataset.tip === tip;
+        const okTag = !tag || (c.dataset.tags || '').split('|').includes(tag);
+        const show = okTip && okTag;
+        c.hidden = !show;
+        if (show) n++;
+      });
+      if (empty) empty.hidden = n > 0;
+    };
+    tabs.forEach((b) => b.addEventListener('click', () => {
+      tabs.forEach((x) => x.classList.remove('is-on'));
+      b.classList.add('is-on');
+      tip = b.dataset.tip || '';
+      apply();
+    }));
+    tagBtns.forEach((b) => b.addEventListener('click', () => {
+      const on = b.classList.contains('is-on');
+      tagBtns.forEach((x) => x.classList.remove('is-on'));
+      tag = on ? '' : (b.dataset.tag || '');
+      if (!on) b.classList.add('is-on');
+      apply();
+    }));
+    // filtru din URL: /noutati/?tip=noutati sau ?tag=Măsurare
+    const q = new URLSearchParams(location.search);
+    const qt = q.get('tip');
+    if (qt) tabs.forEach((b) => { if (b.dataset.tip === qt) b.click(); });
+    const qg = q.get('tag');
+    if (qg) tagBtns.forEach((b) => { if (b.dataset.tag === qg) b.click(); });
+  </script>
+</Base>

@@ -53,15 +53,30 @@ const fullTitle = title.includes('GMC') ? title : `${title} | GMC Proiect Constr
   </main>
   <Footer />
   <script>
+    // elemente care apar progresiv la scroll (+ cele marcate automat)
+    const auto = document.querySelectorAll('.cols-3 > .panel, .cols-4 > .panel, .process.vertical > div, .posts > .post, .cols-2 > *, .faq details, .checks li');
+    auto.forEach((el) => el.classList.add('reveal'));
+    // decalaj între elementele din același grup, pentru efect „în cascadă”
+    const groups = document.querySelectorAll('.tiles, .audience, .process, .cols-3, .cols-4, .posts, .faq, .checks');
+    groups.forEach((g) => Array.from(g.children).forEach((c, i) => { if (c.classList.contains('reveal')) c.style.transitionDelay = `${Math.min(i, 6) * 90}ms`; }));
     const items = document.querySelectorAll('.reveal');
+    // după ce elementul a apărut, scoatem clasele de animație ca hover-ul să reacționeze imediat
+    const finish = (el) => {
+      const delay = parseFloat(el.style.transitionDelay) || 0;
+      setTimeout(() => { el.classList.remove('reveal', 'in'); el.style.transitionDelay = ''; }, 750 + delay);
+    };
     if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.12 });
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); finish(e.target); io.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
       items.forEach((el) => io.observe(el));
     } else {
-      items.forEach((el) => el.classList.add('in'));
+      items.forEach((el) => { el.classList.remove('reveal'); el.style.transitionDelay = ''; });
     }
+    // umbră pe antet după ce începe scroll-ul
+    const header = document.querySelector('.site-header');
+    const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 8);
+    onScroll(); addEventListener('scroll', onScroll, { passive: true });
   </script>
 </body>
 </html>
