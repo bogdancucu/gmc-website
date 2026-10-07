@@ -52,6 +52,8 @@ const fullTitle = title.includes('GMC') ? title : `${title} | GMC Proiect Constr
     <slot />
   </main>
   <Footer />
+  <!-- Statistici: Cloudflare Web Analytics (fără cookie-uri, nu cere banner de consimțământ) -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dec751ff6573413b939ad46e52a6ad0d"}'></script>
   <script>
     // elemente care apar progresiv la scroll (+ cele marcate automat)
     const auto = document.querySelectorAll('.cols-3 > .panel, .cols-4 > .panel, .process.vertical > div, .posts > .post, .cols-2 > *, .faq details, .checks li');
