@@ -1,6 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
-import Faq from '../components/Faq.astro';
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
 
 const faq = [
   { q: 'Ce înseamnă CARIA?', a: 'Concentrația anuală de radon în aerul interior – media pe un an, exprimată în Bq/m³. Este valoarea pe care legislația o compară cu nivelul de referință de 300 Bq/m³. De aceea măsurarea de depistare se face cu detectori pasivi, pe minimum 90 de zile, nu cu un aparat ținut câteva ore.' },
@@ -10,7 +10,7 @@ const faq = [
   { q: 'Cât costă?', a: 'Costul măsurării depinde de numărul de detectori și de amplasarea clădirii. După evaluarea de la fața locului primiți oferta scrisă, înainte de orice angajament.' },
 ];
 ---
-<Base title="Măsurare radon în locuințe și clădiri" description="Măsurare radon cu detectori pasivi CR-39, minimum 90 de zile, conform Ordinului CNCAN 153/2023 și ISO 11665, analizată de LiRaCC – laboratorul de radon al UBB Cluj-Napoca, desemnat de CNCAN. Evaluare la fața locului și ofertă scrisă, în toată România." current="/masurare-radon/" image="/images/detector.jpg">
+<Base title="Măsurare radon în locuințe și clădiri" description="Măsurare radon cu detectori pasivi CR-39, minimum 90 de zile, conform Ordinului CNCAN 153/2023 și ISO 11665, analizată de LiRaCC – laboratorul de radon al UBB Cluj-Napoca, desemnat de CNCAN. Evaluare la fața locului și ofertă scrisă, în toată România." current="/radon/masurare/" image="/images/detector.jpg">
 
   <section class="page-hero" style="background-image:url('/images/detector.jpg')">
     <div class="wrap">
@@ -29,9 +29,9 @@ const faq = [
         <h2>Pentru cine este măsurarea</h2>
         <ul class="checks">
           <li><strong>Locuințe.</strong> Măsurăm în case cu demisol sau subsol, în apartamente la parter și în locuințe renovate energetic sau bine etanșate. Aici măsurarea nu este obligatorie, dar este singura cale de a afla expunerea reală.</li>
-          <li><strong>Locuri de muncă.</strong> Pentru spațiile de lucru de la subsol și parter, angajatorii sunt obligați să determine concentrația de radon (<a href="/radon-la-locul-de-munca/">detalii pentru firme</a>).</li>
+          <li><strong>Locuri de muncă.</strong> Pentru spațiile de lucru de la subsol și parter, angajatorii sunt obligați să determine concentrația de radon (<a href="/radon/locul-de-munca/">detalii pentru firme</a>).</li>
           <li><strong>Clădiri publice.</strong> Școlile, grădinițele, creșele, spitalele, primăriile și alte instituții au obligația de a monitoriza radonul.</li>
-          <li><strong>Clădiri noi.</strong> Măsurăm la finalizare sau, și mai bine, prevedem protecția la radon direct din proiect (<a href="/cladiri-noi-si-proiectare/">clădiri noi și proiectare</a>).</li>
+          <li><strong>Clădiri noi.</strong> Măsurăm la finalizare sau, și mai bine, prevedem protecția la radon direct din proiect (<a href="/radon/cladiri-noi/">clădiri noi și proiectare</a>).</li>
           <li><strong>După o renovare energetică.</strong> Termoizolarea, geamurile noi și etanșarea reduc schimbul de aer, iar concentrația de radon crește. Merită remăsurat.</li>
         </ul>
       </div>
@@ -52,7 +52,7 @@ const faq = [
         <div><h3>Amplasarea detectorilor</h3><p>Amplasăm detectori pasivi CR-39, sigilați și codificați de laborator, în încăperile cele mai folosite (de regulă la parter: living, dormitor, birou). Îi punem la 1–2 m de pardoseală, la cel puțin 30 cm de perete și departe de uși, geamuri, guri de ventilație și surse de căldură.</p></div>
         <div><h3>Expunere minimum 90 de zile</h3><p>Detectorii înregistrează expunerea cumulată; nu se deschid și nu se mută. Durata este cerută de metodologie, pentru că o măsurare de câteva ore sau zile nu caracterizează expunerea anuală.</p></div>
         <div><h3>Ridicare și analiză în laborator</h3><p>Ridicăm detectorii, notăm data, îi sigilăm și îi trimitem la <a href="https://radon.enviro.ubbcluj.ro" target="_blank" rel="noopener">LiRaCC – Laboratorul de Încercări Radon „Constantin Cosma”</a> al Universității Babeș-Bolyai din Cluj-Napoca, laborator desemnat de CNCAN, cu proceduri conform ISO 11665.</p></div>
-        <div><h3>Buletinul de măsurare și pasul următor</h3><p>Primiți concentrația pentru fiecare încăpere, comparată cu nivelul de referință de 300 Bq/m³. Dacă valorile sunt sub nivel, nu este nimic de făcut; repetați măsurarea doar după renovări sau schimbări de ventilație. Dacă îl depășesc, trecem la diagnostic și la <a href="/remediere-radon/">planul de remediere</a>.</p></div>
+        <div><h3>Buletinul de măsurare și pasul următor</h3><p>Primiți concentrația pentru fiecare încăpere, comparată cu nivelul de referință de 300 Bq/m³. Dacă valorile sunt sub nivel, nu este nimic de făcut; repetați măsurarea doar după renovări sau schimbări de ventilație. Dacă îl depășesc, trecem la diagnostic și la <a href="/radon/remediere/">planul de remediere</a>.</p></div>
       </div>
     </div>
   </section>

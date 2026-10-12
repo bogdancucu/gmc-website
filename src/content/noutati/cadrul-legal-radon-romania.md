@@ -35,8 +35,8 @@ Pentru **locuințele private** măsurarea nu este obligatorie, dar este recomand
 
 ## Cine poate măsura
 
-Pentru ca rezultatul să fie recunoscut, buletinul trebuie să provină de la un **laborator desemnat de CNCAN**, care aplică metodologia națională și procedurile ISO 11665, cu control al calității și participare la intercomparări. Noi lucrăm cu LiRaCC – laboratorul de radon al Universității Babeș-Bolyai din Cluj-Napoca. [Cum decurge măsurarea →](/masurare-radon/)
+Pentru ca rezultatul să fie recunoscut, buletinul trebuie să provină de la un **laborator desemnat de CNCAN**, care aplică metodologia națională și procedurile ISO 11665, cu control al calității și participare la intercomparări. Noi lucrăm cu LiRaCC – laboratorul de radon al Universității Babeș-Bolyai din Cluj-Napoca. [Cum decurge măsurarea →](/radon/masurare/)
 
-Lista completă a actelor normative, cu linkuri către textele oficiale, este pe pagina [Legislație](/legislatie/).
+Lista completă a actelor normative, cu linkuri către textele oficiale, este pe pagina [Legislație](/radon/legislatie/).
 
 *Sursa: prezentarea [ARaR](https://radonromania.ro) „Clădiri eficiente, dar și sănătoase – provocarea radonului”, ECI Forum, septembrie 2026.*

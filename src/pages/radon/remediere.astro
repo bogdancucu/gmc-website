@@ -1,6 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
-import Faq from '../components/Faq.astro';
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
 
 const faq = [
   { q: 'Am 350 Bq/m³. E grav?', a: 'Este peste nivelul de referință (300 Bq/m³), deci legislația cere analizarea situației și măsuri de reducere. Riscul crește treptat cu concentrația și cu timpul petrecut în clădire; valorile moderat depășite se rezolvă de regulă cu etanșare și ventilare corectă. Planul îl stabilim după diagnostic.' },
@@ -10,7 +10,7 @@ const faq = [
   { q: 'Ce se întâmplă după remediere?', a: 'Sistemele active (ventilatoare, depresurizare) se verifică periodic și se întrețin. Un studiu pe 10 locuințe din România, urmărite 53 de luni după remediere, a arătat o eficiență mediană de 80%, dar cu variații mari în funcție de metodă și de cât de consecvent au folosit oamenii sistemele. Eficiența tehnică trebuie dublată de obișnuință.' },
 ];
 ---
-<Base title="Remediere radon – diagnostic, plan, execuție, verificare" description="Reducerea concentrației de radon în clădiri existente: diagnostic, plan de remediere conform RTC 6-2022, execuție (etanșare, ventilare, depresurizarea solului) și măsurare de verificare. GMC Proiect Construct, membru ARaR." current="/remediere-radon/" image="/images/remediere.jpg">
+<Base title="Remediere radon – diagnostic, plan, execuție, verificare" description="Reducerea concentrației de radon în clădiri existente: diagnostic, plan de remediere conform RTC 6-2022, execuție (etanșare, ventilare, depresurizarea solului) și măsurare de verificare. GMC Proiect Construct, membru ARaR." current="/radon/remediere/" image="/images/remediere.jpg">
 
   <section class="page-hero" style="background-image:url('/images/remediere.jpg')">
     <div class="wrap">
@@ -32,7 +32,7 @@ const faq = [
         </div>
       </div>
       <div class="process reveal" style="grid-template-columns:repeat(3,1fr)">
-        <div><h3>Depistare</h3><p>Pornim de la buletinul de măsurare emis de un laborator desemnat de CNCAN, care arată dacă nivelul de referință este depășit (<a href="/masurare-radon/">cum se măsoară</a>).</p></div>
+        <div><h3>Depistare</h3><p>Pornim de la buletinul de măsurare emis de un laborator desemnat de CNCAN, care arată dacă nivelul de referință este depășit (<a href="/radon/masurare/">cum se măsoară</a>).</p></div>
         <div><h3>Diagnostic</h3><p>Aflăm de ce există problema: inspectăm fundația și subsolul, identificăm căile de pătrundere, verificăm ventilația și diferențele de presiune și, unde e cazul, facem măsurători suplimentare pe încăperi sau în sol.</p></div>
         <div><h3>Plan de remediere</h3><p>Propunem soluția adaptată clădirii, în funcție de valorile măsurate, de surse, de costuri și de condițiile locale, cu etapele de lucru și cu ținta: sub 300 Bq/m³.</p></div>
         <div><h3>Execuție</h3><p>Lucrarea este executată de echipa noastră de construcții, cu cât mai puțină intervenție în spațiul folosit.</p></div>
@@ -55,7 +55,7 @@ const faq = [
         <div class="panel"><h3>Etanșarea căilor de pătrundere</h3><p>Închidem fisurile din pardoseală, rosturile perete–pardoseală și trecerile de instalații. Reduce intrarea radonului la sursă, dar rareori este suficientă singură la concentrații mari.</p></div>
         <div class="panel"><h3>Ventilația</h3><p>Poate fi naturală sau mecanică, cu recuperare de căldură, și include ventilarea subsolului. Diluează concentrația fără să piardă eficiența energetică a clădirii, dar nu elimină sursa.</p></div>
         <div class="panel"><h3>Presurizarea controlată</h3><p>Menținem în clădire o presiune mai mare decât în sol, astfel încât gazul să nu mai fie „aspirat” înăuntru. Se aplică doar în condiții specifice.</p></div>
-        <div class="panel"><h3>Membrane antiradon</h3><p>Limitează migrarea gazului din sol. Sunt mai ușor de aplicat la clădirile noi, unde le prevedem în proiect de la început (<a href="/cladiri-noi-si-proiectare/">clădiri noi</a>).</p></div>
+        <div class="panel"><h3>Membrane antiradon</h3><p>Limitează migrarea gazului din sol. Sunt mai ușor de aplicat la clădirile noi, unde le prevedem în proiect de la început (<a href="/radon/cladiri-noi/">clădiri noi</a>).</p></div>
         <div class="panel"><h3>Combinații de metode</h3><p>Alegem combinația în funcție de concentrația măsurată, de construcție, de surse și de costuri. După lucrări, măsurarea de verificare este obligatorie.</p></div>
       </div>
     </div>

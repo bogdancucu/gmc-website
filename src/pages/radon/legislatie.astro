@@ -1,5 +1,5 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../../layouts/Base.astro';
 
 // Lista actelor normative relevante pentru radon în clădiri. Linkurile duc la textele oficiale.
 const grupuri = [
@@ -14,8 +14,8 @@ const grupuri = [
   {
     titlu: 'Legislația națională',
     acte: [
-      { nume: 'Legea 111/1996', sub: 'Desfășurarea în siguranță a activităților nucleare (republicată)', ce: 'Legea-cadru în domeniul nuclear și al radioprotecției; stabilește rolul și competențele CNCAN.', link: 'https://www.cncan.ro/legislatie/legi/' },
-      { nume: 'Legea 63/2018', sub: 'Modificarea și completarea Legii 111/1996', ce: 'Transpune Directiva 2013/59/Euratom în legislația românească, inclusiv obligațiile privind expunerea la radon.', link: 'https://www.cncan.ro/legislatie/legi/' },
+      { nume: 'Legea 111/1996', sub: 'Desfășurarea în siguranță a activităților nucleare (republicată)', ce: 'Legea-cadru în domeniul nuclear și al radioprotecției; stabilește rolul și competențele CNCAN.', link: 'https://www.cncan.ro/radon/legislatie/legi/' },
+      { nume: 'Legea 63/2018', sub: 'Modificarea și completarea Legii 111/1996', ce: 'Transpune Directiva 2013/59/Euratom în legislația românească, inclusiv obligațiile privind expunerea la radon.', link: 'https://www.cncan.ro/radon/legislatie/legi/' },
       { nume: 'HG 526/2018', sub: 'Planul Național de Acțiune la Radon (PNAR)', ce: 'Transpune planul de acțiune cerut de directivă: obiective, responsabilități, zonele de prioritate și tipurile de clădiri pentru care măsurarea este obligatorie. CNCAN coordonează aplicarea. Publicată în M. Of. nr. 645/25.07.2018.', link: 'https://legislatie.just.ro/Public/DetaliiDocument/203132' },
       { nume: 'Legea 10/1995', sub: 'Calitatea în construcții', ce: 'Cerința fundamentală „igienă, sănătate și mediu înconjurător” este temeiul reglementărilor tehnice RTC 6 și RTC 7.', link: '' },
       { nume: 'Legea 319/2006', sub: 'Securitatea și sănătatea în muncă', ce: 'Cadrul în care angajatorul evaluează riscurile profesionale; buletinul de măsurare a radonului și planul de reducere intră în dosarul SSM.', link: '' },
@@ -25,7 +25,7 @@ const grupuri = [
     titlu: 'Norme și metodologii CNCAN',
     acte: [
       { nume: 'Ordinul CNCAN 153/2023', sub: 'Metodologia pentru determinarea concentrației de radon în aerul din interiorul clădirilor și de la locurile de muncă', ce: 'Documentul de bază pentru măsurare: definește CARIA (concentrația anuală), cere măsurare integrată de minimum 90 de zile cu detectori pasivi, metode conform ISO 11665, laboratoare desemnate de CNCAN și termenele de remediere (de regulă 12 sau 18 luni, după nivelul de risc). Publicat în M. Of. din 2023.', link: 'https://legislatie.just.ro/Public/DetaliiDocument/273601' },
-      { nume: 'Normele privind cerințele de bază de securitate radiologică', sub: 'Ordinul comun CNCAN / Ministerul Sănătății / Ministerul Muncii nr. 752/3.978/136/2018', ce: 'Stabilesc nivelul de referință de 300 Bq/m³ ca medie anuală pentru locuințe, clădiri publice și locuri de muncă, și obligațiile angajatorului la depășirea lui.', link: 'https://www.cncan.ro/legislatie/' },
+      { nume: 'Normele privind cerințele de bază de securitate radiologică', sub: 'Ordinul comun CNCAN / Ministerul Sănătății / Ministerul Muncii nr. 752/3.978/136/2018', ce: 'Stabilesc nivelul de referință de 300 Bq/m³ ca medie anuală pentru locuințe, clădiri publice și locuri de muncă, și obligațiile angajatorului la depășirea lui.', link: 'https://www.cncan.ro/radon/legislatie/' },
       { nume: 'Lista laboratoarelor desemnate de CNCAN', sub: 'Laboratoare de încercări pentru radon', ce: 'Doar buletinele emise de un laborator din această listă sunt recunoscute. Noi lucrăm cu LiRaCC – Laboratorul de Încercări Radon „Constantin Cosma” al UBB Cluj-Napoca.', link: 'https://www.cncan.ro/assets/Radon/2023/2023Lista-lab-desemnateincercari-radon.pdf' },
     ],
   },
@@ -47,7 +47,7 @@ const grupuri = [
   },
 ];
 ---
-<Base title="Legislația privind radonul în România" description="Lista completă a actelor normative privind radonul în clădiri: Directiva 2013/59/Euratom, HG 526/2018 (PNAR), Ordinul CNCAN 153/2023, RTC 6-2022, RTC 7-2022, ISO 11665 – cu linkuri către textele oficiale." current="/legislatie/" image="/images/documente.jpg">
+<Base title="Legislația privind radonul în România" description="Lista completă a actelor normative privind radonul în clădiri: Directiva 2013/59/Euratom, HG 526/2018 (PNAR), Ordinul CNCAN 153/2023, RTC 6-2022, RTC 7-2022, ISO 11665 – cu linkuri către textele oficiale." current="/radon/legislatie/" image="/images/documente.jpg">
 
   <section class="page-hero" style="background-image:url('/images/documente.jpg')">
     <div class="wrap">

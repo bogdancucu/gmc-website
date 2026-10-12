@@ -22,7 +22,7 @@ România a stabilit nivelul de referință de 300 Bq/m³, media anuală, în lin
 1. **Nu intrați în panică.** Valorile moderat peste 300 Bq/m³ se rezolvă de regulă cu măsuri simple.
 2. **Uitați-vă unde a fost mai mult.** De obicei la demisol, subsol sau parter – acolo intră radonul. Etajele superioare sunt mai puțin afectate.
 3. **Ventilați corect.** Aerisirea regulată scade concentrația, dar nu este o soluție de durată într-o clădire eficientă energetic – pierdeți căldura.
-4. **Cereți un plan de remediere.** Etanșarea căilor de intrare, ventilarea controlată sau un sistem de depresurizare sub placă reduc concentrația la sursă. [Cum lucrăm la remediere →](/remediere-radon/)
+4. **Cereți un plan de remediere.** Etanșarea căilor de intrare, ventilarea controlată sau un sistem de depresurizare sub placă reduc concentrația la sursă. [Cum lucrăm la remediere →](/radon/remediere/)
 5. **Verificați rezultatul.** O nouă măsurare, cu laborator desemnat de CNCAN, confirmă că ați ajuns sub 300 Bq/m³.
 
 ## Dacă n-ați măsurat încă
