@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+
+const faq = [
+  { q: 'Vindeți și echipamentele sau doar le montați?', a: 'Ambele. Furnizăm panourile, invertoarele, bateriile și pompele de căldură de la producători consacrați și livrăm sistemul complet: proiect, avize, montaj, punere în funcțiune și înregistrarea ca prosumator. Dacă aveți deja echipamente, ne ocupăm doar de proiect și montaj.' },
+  { q: 'Cine face montajul?', a: 'Instalatori autorizați ANRE din rețeaua noastră de parteneri.' },
+  { q: 'Cât produce un sistem fotovoltaic la o casă?', a: 'Orientativ, un sistem de 5 kW produce în România 5.500–6.500 kWh pe an, în funcție de orientare, înclinare și umbrire. Facem calculul exact pentru acoperișul dumneavoastră înainte de ofertă.' },
+  { q: 'Există finanțare?', a: 'Da, periodic: Casa Verde (persoane fizice), Electric-Up (IMM-uri), programe pentru instituții publice și fonduri regionale. Vă spunem ce este deschis și pregătim dosarul.' },
+];
+---
+<Base title="Energie verde – fotovoltaice, stocare, pompe de căldură" description="Sisteme fotovoltaice, baterii de stocare, pompe de căldură și eficiență energetică pentru locuințe, firme și instituții. Furnizăm echipamentele și livrăm sistemul complet, cu parteneri autorizați ANRE și acces la finanțări." current="/energie/" image="/images/fotovoltaice.jpg">
+
+  <section class="page-hero" style="background-image:url('/images/fotovoltaice.jpg')">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › Energie verde</div>
+      <h1>Energie verde</h1>
+      <p class="lead">Sisteme fotovoltaice, stocare și pompe de căldură pentru locuințe, firme și instituții. Furnizăm echipamentele, proiectăm sistemul și îl punem în funcțiune împreună cu instalatori autorizați.</p>
+      <div class="cta-row" style="margin-top:24px">
+        <a class="btn primary" href="/contact/">Cere o ofertă pentru clădirea dumneavoastră</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>Soluțiile noastre</h2>
+          <p class="intro">Le combinăm în funcție de consum, de clădire și de buget. Nu vindem kilowați în plus de dragul ofertei.</p>
+        </div>
+      </div>
+      <div class="cols-4">
+        <div class="panel"><h3>Sisteme fotovoltaice</h3><p>Pe acoperiș sau pe sol, pentru case, hale și sedii. Dimensionate după consumul real, cu înregistrare ca prosumator și compensare a energiei livrate în rețea.</p></div>
+        <div class="panel"><h3>Stocare (baterii)</h3><p>Sisteme de stocare care rețin energia produsă ziua pentru consumul de seară și asigură alimentarea la căderi de rețea. Pentru firme, reduc vârfurile de consum și factura.</p></div>
+        <div class="panel"><h3>Pompe de căldură</h3><p>Încălzire și răcire eficiente, aer-apă sau sol-apă, în locul centralelor pe gaz sau lemne. Le dimensionăm împreună cu izolația clădirii, nu separat.</p></div>
+        <div class="panel"><h3>Eficiență energetică</h3><p>Audit energetic, certificat de performanță energetică, plan de măsuri în ordinea rentabilității. Baza pentru orice program de finanțare.</p></div>
+      </div>
+      <div class="gallery-2 reveal">
+        <figure><img src="/images/stocare.jpg" alt="Invertor și baterie de stocare montate în garaj" width="1536" height="1024" loading="lazy"><figcaption>Invertor și stocare: energia produsă ziua, folosită seara.</figcaption></figure>
+        <figure><img src="/images/pompa.jpg" alt="Unitatea exterioară a unei pompe de căldură aer-apă" width="1536" height="1024" loading="lazy"><figcaption>Pompă de căldură aer-apă.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap cols-2 reveal">
+      <div>
+        <h2>Sistemul complet, nu doar echipamentele</h2>
+        <p>Un sistem fotovoltaic bun înseamnă echipamente potrivite, un proiect corect, avize obținute la timp și un montaj făcut de oameni autorizați. Le livrăm pe toate, în ordinea asta:</p>
+        <ul class="checks">
+          <li>Analizăm consumul (facturi, profil orar) și dimensionăm sistemul.</li>
+          <li>Furnizăm echipamentele: panouri, invertoare, baterii, pompe de căldură, de la producători cu garanție reală în România.</li>
+          <li>Întocmim proiectul și obținem avizele (ATR, certificat de racordare).</li>
+          <li>Montăm cu instalatori autorizați ANRE, sub coordonarea GMC.</li>
+          <li>Punem în funcțiune, înregistrăm prosumatorul și vă predăm documentația completă.</li>
+          <li>Rămânem pentru monitorizare, service și extinderi.</li>
+        </ul>
+      </div>
+      <img class="img-r" src="/images/montaj.jpg" alt="Montajul panourilor fotovoltaice pe un acoperiș de țiglă" width="1536" height="1024" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal"><div><h2>Pentru cine</h2></div></div>
+      <div class="audience reveal">
+        <a href="/contact/">
+          <h3>Locuințe</h3>
+          <p>Sistem fotovoltaic cu sau fără stocare, pompă de căldură, prosumator.</p>
+          <span>Cere o ofertă</span>
+        </a>
+        <a href="/contact/">
+          <h3>Firme</h3>
+          <p>Hale, sedii, spații comerciale: sistem dimensionat pe profilul de consum, stocare pentru vârfuri.</p>
+          <span>Cere o ofertă</span>
+        </a>
+        <a href="/consultanta/">
+          <h3>Instituții publice</h3>
+          <p>Școli, primării, spitale: proiecte finanțate din fonduri europene sau naționale, cu dosarul pregătit de noi.</p>
+          <span>Vezi finanțările</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap">
+      <h2>Întrebări frecvente</h2>
+      <div style="margin-top:20px"><Faq items={faq} /></div>
+    </div>
+  </section>
+</Base>

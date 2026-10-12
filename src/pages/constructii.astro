@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+
+const faq = [
+  { q: 'Faceți și proiectul, și execuția?', a: 'Da. Putem prelua proiectul de la idee până la recepție sau doar o parte: numai proiectarea, numai execuția pe un proiect existent, sau numai reabilitarea energetică a unei clădiri existente.' },
+  { q: 'Cine execută lucrările?', a: 'Echipa noastră și, pentru specialități (instalații, structuri speciale, proiectare de specialitate), parteneri autorizați cu care lucrăm constant.' },
+  { q: 'Cum se leagă construcțiile de radon?', a: 'La clădirile noi prevedem protecția la radon din proiect (membrane, straturi drenante, depresurizare pasivă), conform RTC 7-2022, și măsurăm la finalizare. La renovările energetice măsurăm după lucrare, pentru că o clădire mai etanșă reține mai mult radon.' },
+];
+---
+<Base title="Construcții și proiectare – case, clădiri mici și medii, reabilitare" description="Proiectare, execuție, renovări și reabilitare energetică pentru locuințe și clădiri mici și medii. Echipă proprie și parteneri autorizați, protecția la radon inclusă din proiect." current="/constructii/" image="/images/constructie.jpg">
+
+  <section class="page-hero" style="background-image:url('/images/constructie.jpg')">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › Construcții și proiectare</div>
+      <h1>Construcții și proiectare</h1>
+      <p class="lead">Proiectăm și construim locuințe și clădiri mici și medii, renovăm și reabilităm energetic clădiri existente. Lucrăm cu echipa proprie și cu parteneri autorizați, cu eficiența energetică și calitatea aerului interior gândite din proiect.</p>
+      <div class="cta-row" style="margin-top:24px">
+        <a class="btn primary" href="/contact/">Solicită o ofertă</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>Ce facem</h2>
+          <p class="intro">De la primul desen la recepție, sau doar etapa de care aveți nevoie.</p>
+        </div>
+      </div>
+      <div class="cols-3">
+        <div class="panel"><h3>Proiectare</h3><p>Proiecte pentru locuințe și clădiri mici și medii: arhitectură, structură și instalații, cu proiectanți atestați din rețeaua noastră. Documentații pentru autorizare, detalii de execuție și asistență tehnică pe șantier.</p></div>
+        <div class="panel"><h3>Execuție</h3><p>Construim case, extinderi, anexe și clădiri mici și medii. Coordonăm toate specialitățile, ținem graficul și predăm lucrarea cu documentele ei.</p></div>
+        <div class="panel"><h3>Renovări și reabilitare</h3><p>Refacem și modernizăm clădiri existente: structură, învelitoare, finisaje, instalații. Spunem de la început ce merită păstrat și ce nu.</p></div>
+        <div class="panel"><h3>Reabilitare energetică</h3><p>Termoizolare, tâmplărie, ventilare cu recuperare de căldură, încălzire eficientă. Țintim consumul mic fără să sacrificăm calitatea aerului interior.</p></div>
+        <div class="panel"><h3>Clădiri nZEB</h3><p>Proiectăm și executăm la standardul clădirilor cu consum de energie aproape zero, cerut pentru construcțiile noi, inclusiv partea de energie regenerabilă.</p></div>
+        <div class="panel"><h3>Protecție la radon din proiect</h3><p>La clădirile noi prevedem măsurile din RTC 7-2022 și măsurăm la finalizare. Este cel mai ieftin moment pentru a rezolva problema. <a href="/cladiri-noi-si-proiectare/">Detalii</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap cols-2 reveal">
+      <img class="img-r" src="/images/santier.jpg" alt="Verificarea unei lucrări pe șantier" width="1536" height="1024" loading="lazy">
+      <div>
+        <h2>Cum lucrăm</h2>
+        <div class="process vertical" style="margin-top:20px">
+          <div><h3>Evaluare la fața locului</h3><p>Vedem terenul sau clădirea, discutăm ce vreți să obțineți și cu ce buget, și spunem sincer ce este realist.</p></div>
+          <div><h3>Soluție și ofertă scrisă</h3><p>Propunem soluția tehnică, etapele, termenele și costul. Verificăm dacă există un program de finanțare potrivit.</p></div>
+          <div><h3>Execuție coordonată</h3><p>Echipa noastră și partenerii autorizați lucrează după proiect; GMC coordonează, răspunde de calitate și comunică cu dumneavoastră.</p></div>
+          <div><h3>Recepție cu documente</h3><p>Predăm lucrarea cu procesele-verbale, certificatele de materiale, garanțiile și, unde e cazul, buletinul de măsurare a radonului.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>Pentru cine</h2>
+        </div>
+      </div>
+      <div class="audience reveal">
+        <a href="/contact/">
+          <h3>Proprietari</h3>
+          <p>Construiți o casă, extindeți sau renovați. Vreți un partener care să vă ducă de la idee la mutare.</p>
+          <span>Cere o evaluare</span>
+        </a>
+        <a href="/contact/">
+          <h3>Dezvoltatori și investitori</h3>
+          <p>Aveți nevoie de proiectare și execuție coordonate, la termen, cu clădiri eficiente și ușor de vândut.</p>
+          <span>Discută proiectul</span>
+        </a>
+        <a href="/consultanta/">
+          <h3>Firme și instituții</h3>
+          <p>Reabilitați energetic un sediu sau o clădire publică, de multe ori cu finanțare nerambursabilă.</p>
+          <span>Vezi finanțările</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap">
+      <h2>Întrebări frecvente</h2>
+      <div style="margin-top:20px"><Faq items={faq} /></div>
+    </div>
+  </section>
+</Base>

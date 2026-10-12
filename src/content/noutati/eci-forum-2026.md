@@ -28,6 +28,6 @@ Pe scurt, mesajele pe care le-am dus în sală:
 
 ## Ce urmează
 
-Discuțiile de la forum ne-au confirmat că interesul există, mai ales din partea dezvoltatorilor care vor să livreze clădiri cu buletin de măsurare sub nivelul de referință. Continuăm cu evaluări gratuite la fața locului, în toate județele – [scrieți-ne](/contact/) dacă vreți să vorbim despre clădirea dumneavoastră.
+Discuțiile de la forum ne-au confirmat că interesul există, mai ales din partea dezvoltatorilor care vor să livreze clădiri cu buletin de măsurare sub nivelul de referință. Lucrăm în toate județele – [scrieți-ne](/contact/) dacă vreți să vorbim despre clădirea dumneavoastră.
 
 *Mai multe despre cadrul legal, în articolul [Cadrul legal al radonului în România](/noutati/cadrul-legal-radon-romania/) și pe pagina [Legislație](/legislatie/).*

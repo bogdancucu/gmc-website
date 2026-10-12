@@ -32,6 +32,6 @@ Din peste 9.000 de măsurători în 6.374 de locuințe (harta națională CNCAN,
 
 ## Ce facem cu cifrele astea
 
-Nu panică. Conduită rațională: măsurăm, interpretăm rezultatul, identificăm sursa, aplicăm soluția și verificăm. Radonul este un factor de risc care poate fi controlat la costuri rezonabile. [Programați o evaluare gratuită →](/contact/)
+Nu panică. Conduită rațională: măsurăm, interpretăm rezultatul, identificăm sursa, aplicăm soluția și verificăm. Radonul este un factor de risc care poate fi controlat la costuri rezonabile. [Solicitați o ofertă →](/contact/)
 
 *Surse: OMS – Radon and health; Darby et al., BMJ 2005; Dicu, Cucoș et al., 2023; prezentarea [ARaR](https://radonromania.ro), ECI Forum 2026.*

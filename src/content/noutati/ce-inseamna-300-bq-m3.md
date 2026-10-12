@@ -27,4 +27,4 @@ România a stabilit nivelul de referință de 300 Bq/m³, media anuală, în lin
 
 ## Dacă n-ați măsurat încă
 
-Singurul mod de a ști este măsurarea. Evaluarea la fața locului este gratuită: stabilim câți detectori trebuie și unde se amplasează. [Programați o evaluare →](/contact/)
+Singurul mod de a ști este măsurarea. La evaluarea de la fața locului stabilim câți detectori trebuie și unde se amplasează, iar oferta o primiți în scris. [Solicitați o ofertă →](/contact/)

@@ -19,30 +19,31 @@ const { subject = 'Cerere de pe site – GMC Proiect Construct' } = Astro.props;
     <label>E-mail<input type="email" name="email" autocomplete="email"></label>
     <label>Județ / localitate<input type="text" name="localitate" required></label>
   </div>
-  <div class="row">
-    <label>Tipul clădirii
-      <select name="tip_cladire" required>
-        <option value="">Alegeți…</option>
-        <option>Locuință (casă)</option>
-        <option>Apartament (parter / demisol)</option>
-        <option>Birouri / spațiu comercial</option>
-        <option>Hală / depozit</option>
-        <option>Clădire publică (școală, spital, primărie)</option>
-        <option>Clădire nouă / în proiectare</option>
-      </select>
-    </label>
-    <label>Ce vă interesează
-      <select name="serviciu" required>
-        <option value="">Alegeți…</option>
-        <option>Măsurare radon</option>
-        <option>Remediere radon</option>
-        <option>Radon la locul de muncă</option>
-        <option>Proiectare / clădire nouă</option>
-        <option>Altceva</option>
-      </select>
-    </label>
-  </div>
-  <label>Mesaj (opțional)<textarea name="mesaj" rows="4" placeholder="Ex.: casă cu demisol, 2 niveluri, construită în 2015, renovată energetic anul trecut."></textarea></label>
+  <label>Domeniul
+    <select name="domeniu" required>
+      <option value="">Alegeți…</option>
+      <option>Construcții și proiectare</option>
+      <option>Energie verde (fotovoltaice, stocare, pompe de căldură)</option>
+      <option>Radon – măsurare</option>
+      <option>Radon – remediere</option>
+      <option>Radon la locul de muncă / clădire publică</option>
+      <option>Consultanță și finanțări</option>
+      <option>Nu știu încă – vreau o discuție</option>
+    </select>
+  </label>
+  <label>Tipul clădirii
+    <select name="tip_cladire" required>
+      <option value="">Alegeți…</option>
+      <option>Locuință (casă)</option>
+      <option>Apartament / bloc</option>
+      <option>Birouri / spațiu comercial</option>
+      <option>Hală / depozit</option>
+      <option>Clădire publică (școală, spital, primărie)</option>
+      <option>Clădire nouă / în proiectare</option>
+      <option>Teren – vreau să construiesc</option>
+    </select>
+  </label>
+  <label>Mesaj (opțional)<textarea name="mesaj" rows="4" placeholder="Ex.: casă P+1 din 2015, vreau fotovoltaice cu stocare și o măsurare de radon la demisol."></textarea></label>
   <label style="display:flex;gap:10px;align-items:flex-start;font-weight:500">
     <input type="checkbox" name="acord" required style="width:auto;margin-top:4px">
     <span>Sunt de acord ca datele de mai sus să fie folosite pentru a fi contactat în legătură cu cererea mea. <a href="/confidentialitate/">Politica de confidențialitate</a>.</span>
@@ -72,7 +73,7 @@ const { subject = 'Cerere de pe site – GMC Proiect Construct' } = Astro.props;
       if (res.ok && json.success !== false) { window.location.href = '/multumim/'; return; }
       throw new Error(json.message || 'Eroare la trimitere');
     } catch {
-      if (status) { status.hidden = false; status.textContent = 'Nu am putut trimite cererea. Vă rugăm să ne sunați la +40 722 522 514 sau să scrieți la radon@gmc-proiect-construct.ro.'; }
+      if (status) { status.hidden = false; status.textContent = 'Nu am putut trimite cererea. Vă rugăm să ne sunați la +40 722 522 514 sau să scrieți la office@gmc-proiect-construct.ro.'; }
       if (btn) { btn.disabled = false; btn.textContent = 'Trimite cererea'; }
     }
   });

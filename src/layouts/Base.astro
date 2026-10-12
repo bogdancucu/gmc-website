@@ -37,15 +37,15 @@ const fullTitle = title.includes('GMC') ? title : `${title} | GMC Proiect Constr
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'GeneralContractor'],
     name: 'GMC Proiect Construct',
     url: 'https://gmc-proiect-construct.ro',
     telephone: '+40722522514',
-    email: 'radon@gmc-proiect-construct.ro',
+    email: 'office@gmc-proiect-construct.ro',
     areaServed: 'RO',
     address: { '@type': 'PostalAddress', streetAddress: 'Str. George Coșbuc nr. 4', addressLocality: 'Iepurești', addressRegion: 'Giurgiu', addressCountry: 'RO' },
     vatID: '17962239',
-    description: 'Măsurare și remediere radon, proiectare, construcții și eficiență energetică. Membru ARaR.',
+    description: 'Construcții și proiectare, energie verde, măsurare și remediere radon, consultanță pentru finanțări. Membru ARaR.',
     memberOf: { '@type': 'Organization', name: 'ARaR – Asociația Profesioniștilor în Radon din România', url: 'https://www.radonromania.ro' },
   })} />
   {Astro.url.pathname === '/' && (

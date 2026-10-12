@@ -1,62 +1,69 @@
 ---
 import Base from '../layouts/Base.astro';
-import Faq from '../components/Faq.astro';
+import { getCollection } from 'astro:content';
 
-
-const faq = [
-  { q: 'Ce este radonul?', a: 'Un gaz radioactiv natural, incolor și inodor, care provine din sol și se acumulează în clădiri – mai ales în cele bine izolate. Este a doua cauză a cancerului pulmonar după fumat.' },
-  { q: 'De ce ar trebui să măsor?', a: 'Pentru că nu se vede și nu se simte. Singurul mod de a ști concentrația din clădirea dumneavoastră este o măsurare cu detectori, analizată de un laborator desemnat de CNCAN. Nivelul național de referință este de 300 Bq/m³.' },
-  { q: 'Cât durează o măsurare?', a: 'Minimum 90 de zile. Măsurătoarea de depistare se face continuu, cu detectori pasivi amplasați în încăperile folosite cel mai mult, de preferință în sezonul rece. După analiza în laborator primiți un raport cu valorile măsurate și recomandări.' },
-  { q: 'Ce se întâmplă dacă valoarea depășește 300 Bq/m³?', a: 'Vă propunem un plan de remediere adaptat clădirii (ventilare, etanșare, soluții tehnice), îl executăm și verificăm rezultatul printr-o nouă măsurare.' },
-];
+const noutati = (await getCollection('noutati')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
+const fmt = (d: Date) => d.toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
-<Base title="Măsurare și remediere radon | GMC Proiect Construct" description="Măsurăm și remediem radonul în locuințe, birouri și clădiri noi, în toate județele din România. Membru ARaR, măsurare conform Ordinului CNCAN 153/2023 cu laborator desemnat de CNCAN." current="/">
+<Base title="Construcții, energie verde, radon și consultanță | GMC Proiect Construct" description="GMC Proiect Construct: proiectare și construcții, sisteme de energie verde, măsurare și remediere radon, consultanță pentru finanțări. Soluții integrate pentru clădiri eficiente și sănătoase, în toată România." current="/">
 
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <h1>Măsurăm și remediem radonul din clădiri</h1>
-        <p class="lead">GMC Proiect Construct este o firmă de proiectare, construcții și eficiență energetică, membră ARaR. Măsurăm concentrația de radon împreună cu un laborator desemnat de CNCAN și executăm soluțiile de remediere – în locuințe, birouri și clădiri noi, în toate județele din România.</p>
+        <h1>Soluții integrate pentru construcții, energie și mediu</h1>
+        <p class="lead">Proiectăm și construim clădiri eficiente și sănătoase, livrăm sisteme de energie regenerabilă, măsurăm și remediem radonul și vă ajutăm să obțineți finanțarea pentru proiect. Un singur partener, de la idee la recepție.</p>
         <div class="cta-row">
-          <a class="btn primary" href="/contact/">Cere o evaluare gratuită</a>
-          <a class="btn outline" href="/masurare-radon/">Cum decurge măsurarea</a>
+          <a class="btn primary" href="/contact/">Solicită o ofertă</a>
+          <a class="btn outline" href="#servicii">Descoperă serviciile</a>
         </div>
       </div>
-      <img class="hero-img" src="/images/sectiune.jpg" alt="Radonul pătrunde din sol în clădire" width="1400" height="788">
+      <img class="hero-img" src="/images/echipa.jpg" alt="Echipa GMC pe șantier, cu planul clădirii" width="1536" height="1024">
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="servicii">
     <div class="wrap">
       <div class="section-head reveal">
         <div>
           <h2>Ce facem</h2>
-          <p class="intro">Vă însoțim de la prima măsurare până la verificarea finală, cu aceeași echipă.</p>
+          <p class="intro">Construim și reabilităm clădiri, le dotăm cu soluții de energie verde, verificăm nivelul de radon și vă ajutăm să vă finanțați proiectele. Alegeți domeniul care vă interesează.</p>
         </div>
       </div>
-      <div class="tiles reveal">
-        <a class="tile" href="/masurare-radon/">
+      <div class="tiles four reveal">
+        <a class="tile" href="/constructii/">
+          <img src="/images/constructie.jpg" alt="" width="1536" height="1024" loading="lazy">
+          <div class="body">
+            <span class="num">01</span>
+            <h3>Construcții și proiectare</h3>
+            <p>Proiectăm, construim și reabilităm clădiri, cu eficiența energetică gândită din start.</p>
+            <span class="link">Vezi serviciile</span>
+          </div>
+        </a>
+        <a class="tile" href="/energie/">
+          <img src="/images/fotovoltaice.jpg" alt="" width="1536" height="1024" loading="lazy">
+          <div class="body">
+            <span class="num">02</span>
+            <h3>Energie verde</h3>
+            <p>Livrăm sisteme fotovoltaice, soluții de stocare și pompe de căldură, de la proiect până la punerea în funcțiune.</p>
+            <span class="link">Vezi soluțiile</span>
+          </div>
+        </a>
+        <a class="tile" href="/radon/">
           <img src="/images/detector.jpg" alt="" width="1200" height="800" loading="lazy">
           <div class="body">
-            <h3>Măsurare radon</h3>
-            <p>Evaluăm imobilul la fața locului, stabilim amplasarea corectă a detectorilor și analizăm rezultatele într-un laborator desemnat de CNCAN.</p>
-            <span class="link">Cum decurge măsurarea</span>
+            <span class="num">03</span>
+            <h3>Radon și mediu</h3>
+            <p>Măsurăm concentrația de radon împreunp cu laborator desemnat CNCAN și executăm soluțiile de remediere.</p>
+            <span class="link">Despre radon</span>
           </div>
         </a>
-        <a class="tile" href="/remediere-radon/">
-          <img src="/images/remediere.jpg" alt="" width="1536" height="1024" loading="lazy">
+        <a class="tile" href="/consultanta/">
+          <img src="/images/consultanta.jpg" alt="" width="1536" height="1024" loading="lazy">
           <div class="body">
-            <h3>Remediere radon</h3>
-            <p>Reducem concentrația prin ventilare, etanșare sau depresurizare sub placă. Planificăm lucrarea, o executăm și verificăm rezultatul printr-o nouă măsurare.</p>
-            <span class="link">Soluții de remediere</span>
-          </div>
-        </a>
-        <a class="tile" href="/cladiri-noi-si-proiectare/">
-          <img src="/images/santier.jpg" alt="" width="1536" height="1024" loading="lazy">
-          <div class="body">
-            <h3>Clădiri noi și proiectare</h3>
-            <p>Proiectăm și construim clădiri eficiente energetic, cu protecția la radon prevăzută încă din proiect, și măsurăm la finalizare, înainte de recepție.</p>
-            <span class="link">Construim cu radonul în minte</span>
+            <span class="num">04</span>
+            <h3>Consultanță și finanțări</h3>
+            <p>Identificăm programul potrivit, pregătim dosarul și vă însoțim în implementare.</p>
+            <span class="link">Vezi programele</span>
           </div>
         </a>
       </div>
@@ -67,27 +74,31 @@ const faq = [
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <h2>Locuințe, spații de lucru, clădiri noi</h2>
-          <p class="intro">Radonul se măsoară la fel peste tot. Diferă obligațiile legale, soluțiile și documentele de care aveți nevoie.</p>
+          <h2>De ce GMC Proiect Construct</h2>
+          <p class="intro">Suntem constructori din 2005. Am adăugat energia, radonul și consultanța pentru că o clădire bună are nevoie de toate patru, iar clientul are nevoie de un singur interlocutor.</p>
         </div>
       </div>
-      <div class="audience reveal">
-        <a href="/masurare-radon/">
-          <h3>Proprietari de locuințe</h3>
-          <p>Măsurăm în case cu demisol sau subsol, în apartamente la parter și în locuințe renovate energetic.</p>
-          <span>Măsurare pentru locuință</span>
-        </a>
-        <a href="/radon-la-locul-de-munca/">
-          <h3>Firme și instituții</h3>
-          <p>Evaluăm expunerea la radon în birouri, hale, magazine și școli cu spații de lucru la parter sau subsol.</p>
-          <span>Radon la locul de muncă</span>
-        </a>
-        <a href="/cladiri-noi-si-proiectare/">
-          <h3>Dezvoltatori și arhitecți</h3>
-          <p>Prevenim radonul încă din faza de proiect, conform RTC 7-2022, și măsurăm la finalizare, pentru fiecare unitate construită.</p>
-          <span>Clădiri noi</span>
-        </a>
+      <div class="cols-4 reveal">
+        <div class="panel"><h3>Un singur interlocutor</h3><p>Proiect, execuție, energie, radon și finanțare se discută la aceeași masă. Nu trebuie să coordonați dumneavoastră cinci firme.</p></div>
+        <div class="panel"><h3>Execuție coordonată</h3><p>Lucrăm cu echipa proprie și cu parteneri autorizați, în funcție de lucrare, sub coordonarea GMC și cu un singur contract.</p></div>
+        <div class="panel"><h3>Clădiri eficiente și sănătoase</h3><p>Eficiența energetică și calitatea aerului interior se proiectează împreună. Suntem membri ARaR, asociația profesioniștilor în radon.</p></div>
+        <div class="panel"><h3>Finanțarea face parte din plan</h3><p>Verificăm de la început ce program de finanțare se potrivește proiectului, ca să nu descoperiți prea târziu că erați eligibil.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="section navy">
+    <div class="wrap cols-2 reveal">
+      <div>
+        <h2>Specializarea noastră: radonul</h2>
+        <p>Radonul este un gaz radioactiv natural care se acumulează în clădiri, mai ales în cele bine izolate, și este a doua cauză a cancerului pulmonar după fumat. Pentru locurile de muncă de la subsol și parter și pentru clădirile publice, măsurarea este obligatorie prin lege.</p>
+        <p>Măsurăm cu detectori pasivi analizați de un laborator desemnat de CNCAN, punem diagnosticul clădirii, executăm remedierea și verificăm rezultatul – în toate județele din România.</p>
+        <div class="cta-row" style="margin-top:22px">
+          <a class="btn primary" href="/radon/">Măsurare și remediere radon</a>
+          <a class="btn outline-light" href="/radon-la-locul-de-munca/">Obligațiile angajatorului</a>
+        </div>
+      </div>
+      <img class="img-r" src="/images/sectiune.jpg" alt="Radonul pătrunde din sol în clădire" width="1400" height="788" loading="lazy">
     </div>
   </section>
 
@@ -95,67 +106,51 @@ const faq = [
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <h2>Cum decurge</h2>
-          <p class="intro">Sunt patru pași și nu trebuie să vă schimbați rutina.</p>
+          <h2>Cum lucrăm</h2>
+          <p class="intro">Același traseu, indiferent de domeniu.</p>
         </div>
       </div>
       <div class="process reveal">
-        <div><h3>Evaluare gratuită</h3><p>Venim la dumneavoastră, ne uităm la clădire și stabilim câți detectori trebuie și unde se amplasează.</p></div>
-        <div><h3>Amplasarea detectorilor</h3><p>Amplasăm detectori pasivi, discreți, în încăperile folosite cel mai mult. Nu au nevoie de curent și nu fac zgomot.</p></div>
-        <div><h3>Analiză în laborator</h3><p>Ridicăm detectorii și îi trimitem la laboratorul desemnat de CNCAN. Primiți raportul cu valorile măsurate.</p></div>
-        <div><h3>Recomandări sau remediere</h3><p>Sub 300 Bq/m³ nu este nimic de făcut. Peste, propunem remedierea, o executăm și verificăm rezultatul.</p></div>
+        <div><h3>Discuție și evaluare</h3><p>Venim la dumneavoastră, înțelegem clădirea și obiectivul, și spunem sincer ce are sens și ce nu.</p></div>
+        <div><h3>Ofertă scrisă</h3><p>Primiți soluția propusă, etapele, costul și, unde e cazul, programul de finanțare potrivit – înainte de orice angajament.</p></div>
+        <div><h3>Execuție coordonată</h3><p>Echipa noastră sau partenerii autorizați execută lucrarea; GMC răspunde de calitate, termene și comunicare.</p></div>
+        <div><h3>Recepție și verificare</h3><p>Predăm lucrarea cu documentele ei: proces-verbal, certificate, buletine de măsurare, garanții.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section mist">
-    <div class="wrap cols-2 reveal">
-      <img class="img-r" src="/images/casa_iarna.jpg" alt="Casă bine izolată iarna: radonul urcă din sol și se acumulează în încăperi" width="1400" height="933" loading="lazy">
-      <div>
-        <h2>Clădirile eficiente energetic au nevoie de măsurare</h2>
-        <p>Termoizolarea și etanșarea reduc schimbul de aer și cresc concentrația de radon. Media în locuințele din România este de 181 Bq/m³, față de 104 Bq/m³ în Europa, iar una din șapte locuințe măsurate depășește nivelul de referință de 300 Bq/m³.</p>
-        <ul class="checks">
-          <li>Radonul intră din sol prin fisuri, rosturi și treceri de instalații.</li>
-          <li>Se acumulează la parter, la demisol și la subsol.</li>
-          <li>Se reduce la sursă, prin etanșare, ventilare sau depresurizare sub placă.</li>
-        </ul>
-        <a class="btn navy" href="/noutati/ce-inseamna-300-bq-m3/">Ce înseamnă 300 Bq/m³</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="member reveal">
-        <img src="/images/logo-arar.png" alt="ARaR – Asociația Profesioniștilor în Radon din România" width="500" height="398">
-        <div>
-          <h2 style="font-size:28px">Constructori, membri ARaR</h2>
-          <p>Suntem o firmă de proiectare și construcții, membră a <a href="https://radonromania.ro" target="_blank" rel="noopener">Asociației Profesioniștilor în Radon din România</a>. Înțelegem clădirea ca întreg: cum intră radonul, de ce termoizolarea îl reține și ce soluție tehnică funcționează în casa, biroul sau hala dumneavoastră. Lucrăm după metodologia ARaR, împreună cu <a href="https://radon.enviro.ubbcluj.ro" target="_blank" rel="noopener">LiRaCC</a> – laboratorul de radon al UBB Cluj-Napoca, desemnat de CNCAN.</p>
-          <a href="/despre/" style="font-weight:700">Despre GMC Proiect Construct</a>
+  {noutati.length > 0 && (
+    <section class="section mist">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <h2>Noutăți</h2>
+            <p class="intro">Articole de informare și noutăți de la noi.</p>
+          </div>
+          <a class="btn outline" href="/noutati/">Toate noutățile</a>
+        </div>
+        <div class="posts reveal">
+          {noutati.map((p) => (
+            <article class="post">
+              <a class="post-img" href={`/noutati/${p.id}/`} tabindex="-1" aria-hidden="true"><img src={p.data.image ?? '/images/sectiune.jpg'} alt="" width="1400" height="788" loading="lazy"></a>
+              <div class="body">
+                <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+                <h3><a href={`/noutati/${p.id}/`}>{p.data.title}</a></h3>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
-  <section class="section mist">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <h2>Întrebări frecvente</h2>
-          <p class="intro">Răspundem pe scurt la ce ne întreabă clienții înainte de prima măsurare.</p>
-        </div>
-      </div>
-      <div class="reveal"><Faq items={faq} /></div>
-    </div>
-  </section>
-
-
-  <section class="closing mist">
+  <section class="closing">
     <div class="wrap reveal">
-      <h2>Nu știți dacă aveți radon? Singurul mod de a afla este măsurarea.</h2>
-      <p>Evaluarea la fața locului este gratuită, în toate județele din România.</p>
+      <h2>Aveți un proiect? Hai să vorbim.</h2>
+      <p>
+      </p>
       <div class="cta-row">
-        <a class="btn primary" href="/contact/">Cere o evaluare gratuită</a>
+        <a class="btn primary" href="/contact/">Solicită o ofertă</a>
       </div>
     </div>
   </section>

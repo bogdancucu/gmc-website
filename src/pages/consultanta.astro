@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+
+const faq = [
+  { q: 'Pentru ce fel de proiecte puteți obține finanțare?', a: 'Pentru ce facem și noi: construcții și reabilitări energetice, sisteme fotovoltaice și de stocare, pompe de căldură, eficiență energetică în clădiri publice și private. Avantajul este că cel care scrie dosarul este același cu cel care execută lucrarea – bugetul și soluția tehnică se potrivesc de la început.' },
+  { q: 'Cât costă consultanța?', a: 'Verificarea eligibilității o facem la prima discuție, fără angajament. Pentru pregătirea dosarului lucrăm fie cu un onorariu fix, fie cu un procent la semnarea contractului de finanțare, în funcție de program. Vă spunem de la început care este varianta.' },
+  { q: 'Ce se întâmplă după semnarea contractului de finanțare?', a: 'Urmează implementarea: achiziții conform regulilor programului, execuție, rapoarte de progres, cereri de plată/rambursare și raportarea finală. Vă însoțim pe tot parcursul, pentru că de implementare depinde dacă banii rămân nerambursabili.' },
+];
+---
+<Base title="Consultanță și finanțări – programe naționale și europene" description="Identificăm programul de finanțare potrivit proiectului dumneavoastră (Casa Verde, AFM, PNRR, fonduri regionale, Electric-Up), pregătim dosarul și vă însoțim în implementare. Pentru firme, UAT-uri, instituții și persoane fizice." current="/consultanta/" image="/images/consultanta.jpg">
+
+  <section class="page-hero" style="background-image:url('/images/consultanta.jpg')">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="/">Acasă</a> › Consultanță și finanțări</div>
+      <h1>Consultanță și finanțări</h1>
+      <p class="lead">Multe dintre lucrările pe care le facem pot fi finanțate parțial sau integral din programe naționale și europene. Identificăm programul potrivit, verificăm eligibilitatea, pregătim dosarul și vă însoțim în implementare – ca cel care scrie proiectul să fie același cu cel care îl execută.</p>
+      <div class="cta-row" style="margin-top:24px">
+        <a class="btn primary" href="/contact/">Verifică eligibilitatea</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <h2>Ce facem</h2>
+          <p class="intro">De la prima întrebare – „există bani pentru asta?” – până la raportarea finală.</p>
+        </div>
+      </div>
+      <div class="cols-4">
+        <div class="panel"><h3>Identificarea programului</h3><p>Urmărim calendarul programelor deschise și viitoare și vă spunem care se potrivește cu proiectul, cu statutul dumneavoastră și cu termenele.</p></div>
+        <div class="panel"><h3>Verificarea eligibilității</h3><p>Verificăm condițiile de eligibilitate – beneficiar, clădire, cheltuieli – înainte să investiți timp și bani în dosar.</p></div>
+        <div class="panel"><h3>Pregătirea dosarului</h3><p>Cerere de finanțare, documentație tehnică (audit energetic, proiect, devize), buget, anexe. Lucrăm cu consultanți specializați pentru programele complexe.</p></div>
+        <div class="panel"><h3>Implementare și raportare</h3><p>Achiziții conform regulilor, execuție, rapoarte de progres, cereri de rambursare, raportare finală. Partea în care se pierd cei mai mulți bani, dacă e făcută greșit.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap cols-2 reveal">
+      <div>
+        <h2>Programe pe care le urmărim</h2>
+        <p>Programele se deschid și se închid pe sesiuni; lista de mai jos arată tipurile de finanțare cu care lucrăm. Vă spunem ce este deschis în momentul în care ne scrieți.</p>
+        <ul class="checks">
+          <li><strong>Casa Verde </strong> (AFM) – sisteme de stocare pentru persoane fizice.</li>
+          <li><strong>Electric-Up</strong> – fotovoltaice și stocare pentru IMM-uri și HoReCa.</li>
+          <li><strong>PNRR și programele ulterioare </strong> – renovare energetică a clădirilor publice și rezidențiale.</li>
+          <li><strong>Programe regionale </strong> – eficiență energetică și energie regenerabilă pentru firme și UAT-uri.</li>
+          <li><strong>Programe AFM</strong> pentru instituții publice: iluminat, eficiență energetică, energie regenerabilă.</li>
+          <li><strong>Fondul pentru Modernizare</strong> și alte scheme pentru producția de energie din surse regenerabile.</li>
+        </ul>
+      </div>
+      <img class="img-r" src="/images/verificare.jpg" alt="Verificarea documentației unui proiect" width="1536" height="1024" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal"><div><h2>Pentru cine</h2></div></div>
+      <div class="audience reveal">
+        <a href="/contact/">
+          <h3>Firme</h3>
+          <p>Fotovoltaice, stocare, reabilitarea sediului sau a halei, cu finanțare nerambursabilă unde există.</p>
+          <span>Verifică eligibilitatea</span>
+        </a>
+        <a href="/contact/">
+          <h3>Primării și instituții publice</h3>
+          <p>Reabilitarea energetică a clădirilor publice, energie regenerabilă, măsurarea radonului în școli și sedii.</p>
+          <span>Discută proiectul</span>
+        </a>
+        <a href="/contact/">
+          <h3>Persoane fizice</h3>
+          <p>Casa Verde, programe de renovare – vă spunem când se deschid și pregătim dosarul.</p>
+          <span>Cere detalii</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mist">
+    <div class="wrap">
+      <h2>Întrebări frecvente</h2>
+      <div style="margin-top:20px"><Faq items={faq} /></div>
+    </div>
+  </section>
+</Base>
