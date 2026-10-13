@@ -47,6 +47,8 @@ const fullTitle = title.includes('GMC') ? title : `${title} | GMC Proiect Constr
     vatID: '17962239',
     description: 'Construcții și proiectare, energie verde, măsurare și remediere radon, consultanță pentru finanțări. Membru ARaR.',
     memberOf: { '@type': 'Organization', name: 'ARaR – Asociația Profesioniștilor în Radon din România', url: 'https://www.radonromania.ro' },
+    sameAs: ['https://www.linkedin.com/company/gmc-proiect-construct/', 'https://www.facebook.com/gmcproiectconstruct', 'https://www.instagram.com/gmcproiectconstruct/'],
+    foundingDate: '2005',
   })} />
   {Astro.url.pathname === '/' && (
     <script type="application/ld+json" set:html={JSON.stringify({
