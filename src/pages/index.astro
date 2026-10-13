@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 const noutati = (await getCollection('noutati')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
 const fmt = (d: Date) => d.toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
-<Base title="Construcții, energie verde, radon și consultanță | GMC Proiect Construct" description="GMC Proiect Construct: proiectare și construcții, sisteme de energie verde, măsurare și remediere radon, consultanță pentru finanțări. Soluții integrate pentru clădiri eficiente și sănătoase, în toată România." current="/">
+<Base title="GMC Proiect Construct – Construcții, energie, radon" description="GMC Proiect Construct: proiectare și construcții, sisteme de energie verde, măsurare și remediere radon, consultanță pentru finanțări. Soluții integrate pentru clădiri eficiente și sănătoase, în toată România." current="/">
 
   <section class="hero">
     <div class="wrap">
